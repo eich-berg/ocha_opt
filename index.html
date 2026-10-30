@@ -1,0 +1,1558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Health, Demolition, and Displacement in the West Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Courier+Prime:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout concept: a field survey in soil colours. A plain dark moss title plate, then ink-edged plates. Brown always means assessed need; moss, slate, ochre and khaki are categories. Texture and labels back up every hue. */
+:root{
+  color-scheme: light;
+  --bg:#d7d2bd; --panel:#e9e5d2; --panel2:#ddd9c2; --line:#bcb79b; --grid:#cbc6aa; --edge:#2c2a1c; --shadow:#2c2a1c;
+  --ink:#26231a; --ink2:#4f4c37; --mute:#736f56;
+  --on-light:#1f2418; --on-dark:#f1ead6; --on-pink:#f4ecd6;
+  --pink:#a2502a; --hl:#cfd3a0;
+  --map:#e2ddc6; --hull:#736f56; --dens:#4b6a3a;
+  --need0:#eadcc0; --need1:#b9683a; --need2:#5b2711;
+  --lo:#2d5a3d; --mid:#dcd5bb; --hi:#c27a2c;
+  --focus:#a2502a; --sel-bg:#b3bf86;
+  --hero-bg:#2f3b27; --hero-ink:#e6dfc4; --tape-bg:#a2502a; --tape-ink:#f4ecd6; --ridge-hi:#e0955a;
+  --blend:multiply;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --grain-op:.16;
+  --f-display:"Big Shoulders Display","Oswald","Arial Narrow",Impact,sans-serif;
+  --f-body:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Courier Prime","Courier New",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#11130d; --panel:#1b1e15; --panel2:#252a1c; --line:#3a4030; --grid:#2c3223; --edge:#7d8465; --shadow:#060704;
+    --ink:#ece6d0; --ink2:#bdb9a0; --mute:#8b8870;
+    --pink:#d98a55; --on-pink:#1f1a10; --hl:rgba(150,178,100,.26);
+    --map:#10130b; --hull:#8b8870; --dens:#8fae62;
+    --need0:#3a2e20; --need1:#c0693a; --need2:#f2c08f;
+    --lo:#78ad6a; --mid:#34382a; --hi:#e0954a;
+    --focus:#e0954a; --sel-bg:#9ab36a;
+    --hero-bg:#1f2819; --hero-ink:#e2dbc0; --tape-bg:#b4602f; --tape-ink:#f4ecd6; --ridge-hi:#e8a468;
+    --blend:screen;
+    --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    --grain-op:.07;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#11130d; --panel:#1b1e15; --panel2:#252a1c; --line:#3a4030; --grid:#2c3223; --edge:#7d8465; --shadow:#060704;
+  --ink:#ece6d0; --ink2:#bdb9a0; --mute:#8b8870;
+  --pink:#d98a55; --on-pink:#1f1a10; --hl:rgba(150,178,100,.26);
+  --map:#10130b; --hull:#8b8870; --dens:#8fae62;
+  --need0:#3a2e20; --need1:#c0693a; --need2:#f2c08f;
+  --lo:#78ad6a; --mid:#34382a; --hi:#e0954a;
+  --focus:#e0954a; --sel-bg:#9ab36a;
+  --hero-bg:#1f2819; --hero-ink:#e2dbc0; --tape-bg:#b4602f; --tape-ink:#f4ecd6; --ridge-hi:#e8a468;
+  --blend:screen;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --grain-op:.07;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.45;padding-inline:16px;padding-block:20px 48px;position:relative}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:6;background-image:var(--grain);opacity:var(--grain-op)}
+.app{max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:.015em;text-wrap:balance}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* title plate */
+.hero{display:grid;grid-template-columns:minmax(0,1fr);align-items:end;gap:8px 24px;background:var(--hero-bg);color:var(--hero-ink);border:2px solid var(--edge);border-radius:6px;box-shadow:3px 3px 0 var(--shadow);padding:26px 28px 0;overflow:hidden;position:relative}
+.hero .lead{min-width:0;padding-bottom:26px}
+.eyebrow{font:700 11.5px/1.2 var(--f-mono);letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(36px,5.6vw,84px);line-height:.95;letter-spacing:.005em;margin-top:12px;color:var(--hero-ink)}
+h1 em{font-style:normal}
+.sub{max-width:62ch;margin:18px 0 0;font-size:15px;font-weight:500}
+.hero details{margin-top:14px;max-width:62ch}
+.hero summary{cursor:pointer;display:inline-flex;gap:8px;align-items:center;font:700 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--hero-ink);border-radius:3px;padding:5px 10px;list-style:none}
+.hero summary::after{content:"+"}
+.hero details[open] summary::after{content:"–"}
+.hero details p{margin:10px 0 0;font-size:13.5px}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:32px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--panel);border:2px solid var(--edge);border-radius:3px;padding:3px 6px 3px 10px;font-size:12.5px;cursor:pointer;box-shadow:2px 2px 0 var(--shadow)}
+.chip b{font:700 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.chip i{font-style:normal;width:18px;height:18px;display:grid;place-items:center;border-radius:2px;background:var(--ink);color:var(--panel);font-weight:700}
+.chips .none{color:var(--ink2);font:400 13px var(--f-mono)}
+.linkbtn{background:none;border:0;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:700 12px var(--f-mono);padding:4px}
+
+/* stat tiles */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.kpi{background:var(--panel);border:2px solid var(--edge);border-radius:4px;box-shadow:3px 3px 0 var(--shadow);padding:12px 14px 12px;min-width:0;position:relative}
+.kpi .lab{font:700 10.5px/1.2 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.kpi .val{font-family:var(--f-display);font-weight:800;font-size:clamp(36px,3.6vw,52px);line-height:1;margin-top:8px}
+.kpi .note{font:400 12px var(--f-mono);color:var(--ink2);margin-top:4px}
+.kpi.key{background:var(--pink);color:var(--on-pink)}
+.kpi.key .lab,.kpi.key .note{color:var(--on-pink)}
+.read{margin:0;color:var(--ink);font-size:14.5px;max-width:112ch;background:var(--panel2);border:2px dashed var(--edge);border-radius:4px;padding:10px 14px}
+.read strong{font-weight:600;background:linear-gradient(transparent 58%,var(--hl) 58%)}
+
+/* plates */
+.panel{background:var(--panel);border:2px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--shadow);min-width:0}
+.ph{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:space-between;align-items:flex-start;padding:14px 16px 0}
+.tag{display:inline-block;font:700 10px/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:var(--panel);padding:4px 7px;border-radius:2px;margin-bottom:8px}
+.ph h2{font-size:26px;line-height:1}
+.ph p{margin:6px 0 0;color:var(--ink2);font-size:13px;max-width:62ch}
+.ctrls{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.ctrls label{font:700 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);display:flex;gap:6px;align-items:center}
+select{background:var(--panel);border:2px solid var(--edge);border-radius:3px;padding:5px 8px;font-size:12.5px;max-width:100%}
+.seg{display:inline-flex;border:2px solid var(--edge);border-radius:3px;overflow:hidden;background:var(--panel)}
+.seg button{background:transparent;border:0;border-right:2px solid var(--edge);padding:5px 10px;font-size:12.5px;cursor:pointer;color:var(--ink)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--sel-bg);color:var(--on-light);font-weight:600}
+.btn{background:var(--panel);border:2px solid var(--edge);border-radius:3px;padding:5px 10px;font-size:12.5px;cursor:pointer;box-shadow:2px 2px 0 var(--shadow)}
+.btn:active{transform:translate(2px,2px);box-shadow:none}
+.btn[aria-pressed="true"]{background:var(--sel-bg);color:var(--on-light)}
+.tgl{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+input[type=checkbox]{accent-color:var(--pink);width:15px;height:15px}
+
+.main{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:22px}
+.mapwrap{position:relative;height:clamp(460px,68vh,720px);margin:12px 16px 16px;border-radius:3px;overflow:hidden;background:var(--map);border:2px solid var(--edge)}
+.mapwrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+.mapwrap canvas:active{cursor:grabbing}
+.halftone{position:absolute;left:0;top:0;width:55%;height:45%;pointer-events:none;background-image:radial-gradient(var(--ink) 1.2px,transparent 1.7px);background-size:8px 8px;opacity:.22;-webkit-mask-image:linear-gradient(135deg,#000,transparent 62%);mask-image:linear-gradient(135deg,#000,transparent 62%)}
+.legend{position:absolute;left:10px;bottom:10px;background:var(--panel);border:2px solid var(--edge);border-radius:3px;box-shadow:3px 3px 0 var(--shadow);padding:8px 10px;font-size:11.5px;color:var(--ink);max-width:min(300px,72%);pointer-events:none}
+.legend .ramp{height:10px;border:1.5px solid var(--edge);margin:6px 0 3px;background:linear-gradient(90deg,var(--need0),var(--need1),var(--need2))}
+.legend .rl{display:flex;justify-content:space-between;font:400 10.5px var(--f-mono);color:var(--ink2)}
+.legend .sw{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:2px}
+.legend .sw span{display:inline-flex;gap:5px;align-items:center}
+.legend .sw i{width:10px;height:10px;border-radius:50%;display:inline-block;border:1.5px solid var(--edge)}
+.legend .hollow{display:inline-block;width:10px;height:10px;border:1.5px dashed var(--mute);border-radius:50%;vertical-align:-1px;margin-right:4px}
+.yearmark{position:absolute;right:14px;top:8px;font:800 88px/1 var(--f-display);color:transparent;-webkit-text-stroke:2px var(--ink);opacity:.35;pointer-events:none}
+.sidecol{display:flex;flex-direction:column;gap:22px;min-width:0}
+.sidecol .panel{display:flex;flex-direction:column}
+.sidecol .grow{flex:1;min-height:0}
+
+.demo{padding:12px 16px 16px;display:flex;flex-wrap:wrap;gap:14px 18px;align-items:flex-start}
+.waffle{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;width:148px;flex:none}
+.waffle i{display:block;aspect-ratio:1;border-radius:50%;border:1px solid var(--edge)}
+.waffle i.kid{transform:scale(.62)}
+.demo .key{flex:1 1 130px;min-width:0}
+.demo ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.demo li{display:flex;gap:8px;align-items:center;font-size:12.5px}
+.demo li i{width:11px;height:11px;border-radius:50%;flex:none;border:1px solid var(--edge)}
+.demo li b{font:700 12px var(--f-mono);margin-left:auto}
+.demo .cap{flex:1 1 100%;margin:0;font-size:12.5px;color:var(--ink2)}
+.demo .cap b{color:var(--ink)}
+.places{list-style:none;margin:8px 0 0;padding:0 8px 10px;overflow:auto;max-height:430px}
+.places li button{width:100%;display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:3px 8px;text-align:left;background:none;border:0;border-radius:3px;padding:6px 8px;cursor:pointer}
+.places li button:hover{background:var(--panel2)}
+.places li button[aria-pressed="true"]{background:var(--hl);box-shadow:inset 3px 0 0 var(--pink)}
+.places .nm{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.places .nm small{color:var(--mute);font-size:11px;margin-left:6px;font-weight:400}
+.places .rt{font:700 11.5px var(--f-mono);text-align:right}
+.places .bar{grid-column:1/3;height:6px;background:var(--grid);border-radius:1px}
+.places .bar i{display:block;height:100%;background:repeating-linear-gradient(135deg,var(--ink) 0 2px,transparent 2px 5px);border-right:2px solid var(--ink)}
+
+.tl{padding:8px 16px 16px;overflow:hidden}
+.tl svg{display:block;width:100%;height:auto}
+.linechips{display:flex;flex-wrap:wrap;gap:6px}
+.lc{display:inline-flex;align-items:center;gap:7px;background:var(--panel);border:2px solid var(--edge);border-radius:3px;padding:2px 9px;font-size:12px;cursor:pointer;color:var(--ink)}
+.lc i{width:16px;height:4px;border-radius:2px;display:inline-block;border:1px solid var(--edge)}
+.lc[aria-pressed="false"]{opacity:.5;text-decoration:line-through}
+.lc[aria-pressed="false"] i{background:var(--mute)!important}
+
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px}
+.empty{padding:30px 14px;color:var(--mute);text-align:center}
+
+.logwrap{overflow-x:auto;padding:10px 16px 14px}
+table.log{width:100%;border-collapse:collapse;font-size:12.5px;min-width:840px;font-family:var(--f-mono)}
+table.log th{font:700 10.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--panel);background:var(--ink);text-align:left;padding:7px 8px;position:sticky;top:0}
+table.log td{padding:6px 8px;border-bottom:1px dotted var(--mute);vertical-align:top}
+table.log tbody tr:hover td{background:var(--panel2)}
+table.log td.n,table.log th.n{text-align:right;font-variant-numeric:tabular-nums}
+table.log td.d{white-space:nowrap}
+.pill{display:inline-block;font:700 10px/1 var(--f-mono);padding:3px 4px;border:1.5px solid var(--edge);border-radius:2px;margin-right:3px}
+.pill.hot{background:var(--pink);color:var(--on-pink)}
+.more{display:flex;justify-content:center;padding:0 16px 16px}
+footer.notes{color:var(--ink2);font-size:12.5px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px 28px;border-top:2px dashed var(--edge);padding-top:16px}
+footer.notes p{margin:0;max-width:60ch}
+footer.notes b{color:var(--ink);font:700 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+
+#tip{position:fixed;z-index:20;pointer-events:none;background:var(--panel);color:var(--ink);border:2px solid var(--edge);border-radius:4px;padding:8px 10px;font-size:12px;max-width:300px;box-shadow:4px 4px 0 var(--shadow);opacity:0;transition:opacity .08s}
+#tip.on{opacity:1}
+#tip .t{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:17px;margin-bottom:4px}
+#tip .m{color:var(--ink2)}
+#tip .k{font-family:var(--f-mono);font-weight:700;color:var(--ink)}
+.sub p{margin:0 0 .7em}.sub a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.wordsplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 34px;align-items:start}
+.wordsplit .ladhead{margin-top:0;border-top:0;padding-top:0}
+@media (max-width:1050px){.wordsplit{grid-template-columns:minmax(0,1fr)} .wordsplit .ladhead{margin-top:18px;border-top:2px dashed var(--edge);padding-top:12px}}
+.loading{padding:14px 16px;border:2px dashed var(--edge);border-radius:4px;background:var(--panel2);font:400 13px var(--f-mono);color:var(--ink2)}
+.loading.err{border-style:solid;color:var(--ink)}
+.loading .btn{margin-left:8px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+.viz{padding:8px 16px 14px;min-width:0}
+.viz svg{display:block;width:100%;height:auto;overflow:visible}
+.viz .lbl{font:500 11.5px var(--f-body);fill:var(--ink)}
+.viz .sm{font:400 10.5px var(--f-mono);fill:var(--mute)}
+.viz .hd{font:800 14px var(--f-display);fill:var(--ink);letter-spacing:.07em;text-transform:uppercase;paint-order:stroke;stroke:var(--panel);stroke-width:6px;stroke-linejoin:round}
+.viz .click{cursor:pointer}
+.viz .frow:hover rect{fill:var(--panel2)}
+.viz .edge{transition:opacity .1s}
+.cap2{margin:0;padding:0 16px 14px;font-size:13px;color:var(--ink2);max-width:80ch}
+.cap2 b{color:var(--ink);font-weight:600}
+.legendrow{display:flex;flex-wrap:wrap;gap:6px 16px;padding:0 16px 14px;font-size:12px;color:var(--ink2)}
+.legendrow span{display:inline-flex;gap:6px;align-items:center}
+.legendrow i{width:12px;height:12px;border:1.5px solid var(--ink);display:inline-block}
+.legendrow .dot{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
+.legendrow .ring{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink);background:var(--panel);display:inline-block}
+details.how{margin:0 16px 16px;border:1.5px dashed var(--edge);border-radius:4px;padding:8px 12px;font-size:12.5px;color:var(--ink2)}
+details.how summary{cursor:pointer;font:700 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+details.how p{margin:8px 0 0;max-width:96ch}
+.tgrp{margin-bottom:12px}
+.thead{font:800 14px var(--f-display);letter-spacing:.07em;text-transform:uppercase;border-bottom:1.2px solid var(--edge);padding-bottom:3px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.thead small{font:400 11px var(--f-mono);color:var(--mute);letter-spacing:0;text-transform:none}
+.trow{display:grid;grid-template-columns:minmax(0,236px) 1fr 40px;gap:8px;align-items:center;padding:2px 0;font-size:12.5px}
+.trow .tl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trow .tn{font:700 11.5px var(--f-mono);text-align:right}
+.dbar{display:block;height:12px;border-bottom:1px dotted var(--line)}
+.dbar i{display:block;height:100%}
+.ladhead{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:space-between;align-items:center;margin:18px 0 8px;border-top:2px dashed var(--edge);padding-top:12px}
+.ladhead h3{font-size:17px}
+.ladhead label{font:700 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);display:flex;gap:6px;align-items:center}
+.lrow{display:grid;grid-template-columns:minmax(0,168px) 1fr;gap:8px;align-items:center;margin:3px 0}
+.ll{display:flex;justify-content:space-between;gap:6px;background:none;border:0;text-align:left;cursor:pointer;padding:3px 6px;border-radius:3px;font-size:12.5px}
+.ll:hover{background:var(--panel2)}
+.ll[aria-pressed="true"]{background:var(--hl);box-shadow:inset 3px 0 0 var(--pink)}
+.ll em{font:normal 400 10.5px var(--f-mono);color:var(--mute)}
+.lbar{display:flex;height:20px;border:1.5px solid var(--ink);border-radius:2px;overflow:hidden}
+.lbar i{display:grid;place-items:center;font:700 10.5px var(--f-mono);font-style:normal;min-width:0;border-right:1px solid var(--ink)}
+.lbar i:last-child{border-right:0}
+.lkey{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11.5px;color:var(--ink2);margin-top:8px}
+.lkey span{display:inline-flex;gap:6px;align-items:center}
+.lkey i{width:11px;height:11px;border:1.5px solid var(--ink);display:inline-block}
+@media (max-width:1050px){
+  .main{grid-template-columns:minmax(0,1fr)}
+  .two,.grid2{grid-template-columns:minmax(0,1fr)}
+  .places{max-height:300px}
+}
+@media (max-width:760px){
+  .hero{grid-template-columns:minmax(0,1fr);padding:20px 18px 0}
+  .hero .lead{padding-bottom:14px}
+}
+@media (max-width:600px){
+  .mapwrap{margin-inline:10px}
+  .yearmark{font-size:56px}
+  .panel{box-shadow:4px 4px 0 var(--shadow)}
+  .kpi{transform:none!important}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="loading" id="loading" role="status">Loading incident records…</div>
+  <noscript><p class="loading err">This page needs JavaScript to draw the charts.</p></noscript>
+  <header class="hero">
+    <div class="lead">
+      <div class="eyebrow" id="eyebrow">West Bank and East Jerusalem · incident records</div>
+      <h1>Health, Demolition, and <em>Displacement</em> in the West Bank</h1>
+      <div class="sub">
+        <p>This visualisation draws on data collected by the UN OCHA in the occupied Palestinian territory (oPt). The data tracks the demolition of Palestinian-owned structures, and the resulting displacement of people from their homes, across the West Bank, including East Jerusalem, since 2009.</p>
+        <p>Alongside the demolitions themselves, the dataset records the needs of affected community members across health, livelihood, shelter and water, among others. That makes it possible to explore how these incidents relate to health in a broader sense than physical health alone: one that takes in the link between adverse health outcomes and a severed connection to place. The approach is inspired by Danya M. Qato's 2020 article <a href="https://www.palestine-studies.org/en/node/1650618" target="_blank" rel="noopener">Public Health and the Promise of Palestine</a>.</p>
+        <p>Data scraped from <a href="https://www.ochaopt.org/data/demolition" target="_blank" rel="noopener">ochaopt.org/data/demolition</a>. Click anything to filter everything.</p>
+      </div>
+      <details>
+        <summary>How to read this</summary>
+        <p>Each map ring is a place: its size is the loss and its filled centre is the share of assessed incidents that flagged the need. Brown always means need. The charts below ask how place, event, actor, what was lost and who was affected relate to the body (health care, water), the mind (psychosocial support) and the land (livelihood). Some charts follow your filters; the model charts use all data. Needs are what responders assessed, not clinical outcomes, and are recorded only from 2014.</p>
+      </details>
+    </div>
+  </header>
+
+  <div class="chips" id="chips" aria-live="polite"></div>
+  <section class="kpis" id="kpis" aria-label="Summary of current selection"></section>
+  <p class="read" id="read"></p>
+
+  <section class="main">
+    <div class="panel">
+      <div class="ph">
+        <div><span class="tag">Map</span><h2>Where it happened, and what followed</h2><p>Each ring is a place. Its size shows the loss and its colour shows the need you pick. Scroll to zoom, drag to move, click a ring to filter.</p></div>
+        <div class="ctrls">
+          <label>Colour <select id="colorBy" aria-label="Colour bubbles by"></select></label>
+          <label>Size <span class="seg" id="sizeBy" role="group" aria-label="Size bubbles by"><button data-v="st" aria-pressed="true">Structures</button><button data-v="ap" aria-pressed="false">People</button><button data-v="n" aria-pressed="false">Incidents</button></span></label>
+          <label class="tgl"><input type="checkbox" id="tDens" checked> Contours</label>
+          <label class="tgl"><input type="checkbox" id="tHull" checked> Outlines</label>
+          <button class="btn" id="play" aria-pressed="false">Play by year</button>
+          <button class="btn" id="resetView">Reset view</button>
+        </div>
+      </div>
+      <div class="mapwrap" id="mapwrap">
+        <canvas id="map" role="img" aria-label="Map of demolition incidents by locality"></canvas>
+        <div class="yearmark" id="yearmark"></div>
+        <div class="legend" id="legend"></div>
+      </div>
+    </div>
+    <aside class="sidecol">
+      <div class="panel">
+        <div class="ph"><div><span class="tag">People</span><h2>Who is affected</h2><p>Each dot is 1% of the people recorded. Small dots are children.</p></div></div>
+        <div class="demo" id="demo"></div>
+      </div>
+      <div class="panel grow">
+        <div class="ph"><div><span class="tag">Places</span><h2>Hardest-hit places</h2><p>Ranked by structures demolished. The percentage is how often a health or psychosocial need was flagged.</p></div></div>
+        <ul class="places" id="places"></ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="panel">
+    <div class="ph">
+      <div><span class="tag">Time</span><h2>Volume above, need below</h2><p>Thickness shows monthly demolitions, coloured by stated reason. The lines below show how often each need was flagged, as a 12-month average. Drag to pick a period; double-click to clear.</p></div>
+      <div class="ctrls">
+        <span class="seg" id="tlMetric" role="group" aria-label="Timeline measure"><button data-v="st" aria-pressed="true">Structures</button><button data-v="n" aria-pressed="false">Incidents</button><button data-v="ap" aria-pressed="false">People</button></span>
+        <span class="linechips" id="lineChips" role="group" aria-label="Needs shown as lines"></span>
+      </div>
+    </div>
+    <div class="tl" id="tl"></div>
+  </section>
+
+<section class="grid2">
+    <div class="panel">
+      <div class="ph">
+        <div><span class="tag">Three lenses</span><h2>The shape of harm</h2><p>Each blob is a group of incidents, placed by whether its needs lean towards the body, the mind or the land. Darker blobs flag more needs. The scattered dots show how uncertain the position is.</p></div>
+        <div class="ctrls"><label>Group by <select id="ternDim" aria-label="Group incidents by"></select></label></div>
+      </div>
+      <div class="viz" id="tern"></div>
+      <p class="cap2" id="ternRead"></p>
+      <div class="legendrow"><span>Blob area = incidents</span><span><i style="width:46px;background:linear-gradient(90deg,var(--need0),var(--need1),var(--need2))"></i>mean share flagging a lens, 0% to 70%</span><span>◇ all incidents in view</span></div>
+    </div>
+    <div class="panel">
+      <div class="ph"><div><span class="tag">Web</span><h2>Needs that travel together</h2><p>Each dot is a need, sized by how often it is flagged. Warm lines join needs that tend to appear together; cool dotted lines join needs that rarely do. Only clear links are drawn.</p></div></div>
+      <div class="viz" id="web"></div>
+      <p class="cap2" id="webRead"></p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="ph">
+      <div><span class="tag">Drivers</span><h2>What goes with what</h2><p>How much each factor changes the odds that a need is flagged, with the other factors held equal. Hollow ring: the plain comparison. Filled dot: the adjusted result. Bars show the 95% range. Click a row to filter the page.</p></div>
+      <div class="ctrls"><span class="seg" id="outSeg" role="group" aria-label="Need to explain"><button data-v="ps" aria-pressed="true">Psychosocial</button><button data-v="wa" aria-pressed="false">Water &amp; sanitation</button><button data-v="lv" aria-pressed="false">Livelihood</button><button data-v="hl" aria-pressed="false">Health care</button></span></div>
+    </div>
+    <p class="cap2" id="drvfit"></p>
+    <div class="viz" id="drv"></div>
+    <div class="legendrow"><span><b class="dot" style="background:var(--need1)"></b>more likely flagged than the reference</span><span><b class="dot" style="background:var(--lo)"></b>less likely</span><span><b class="dot" style="background:var(--mute)"></b>cannot be told from no difference</span><span><b class="ring"></b>unadjusted</span><span>number at left = incidents in the group</span></div>
+    <details class="how">
+      <summary>How the model works, and what it cannot tell you</summary>
+      <p>Each need is modelled separately, using incidents assessed since 2014. The model weighs together the reason, who carried it out, incident type, what was lost, displacement, refugee status, place, size of the event, repetition and year. An odds ratio of 2 means the odds of a flag are twice as high.</p>
+      <p><b>What it cannot tell you.</b> These are needs responders recorded, not clinical outcomes, and they follow what was destroyed.</p>
+    </details>
+  </section>
+
+  <section class="grid2">
+    <div class="panel">
+      <div class="ph"><div><span class="tag">Strata</span><h2>What explains a flagged need</h2><p>Each column is all the variation in whether a need was flagged. Coloured layers show how much one group of factors explains on its own, hatching is shared between groups, and the dashed part is unexplained.</p></div></div>
+      <div class="viz" id="strata"></div>
+      <div class="legendrow" id="strataLegend"></div>
+      <p class="cap2" id="strataRead"></p>
+    </div>
+    <div class="panel">
+      <div class="ph">
+        <div><span class="tag">Place</span><h2>Places beyond chance</h2><p>Each point is a locality. Small places vary a lot by chance, so the funnel shows the normal range for their size. Points outside it differ more than chance explains.</p></div>
+        <div class="ctrls"><span class="seg" id="funSeg" role="group" aria-label="Need to show"><button data-v="ps" aria-pressed="true">Psychosocial</button><button data-v="wa" aria-pressed="false">Water &amp; sanitation</button><button data-v="lv" aria-pressed="false">Livelihood</button><button data-v="any" aria-pressed="false">Any need</button></span></div>
+      </div>
+      <div class="viz" id="fun"></div>
+      <p class="cap2" id="funRead"></p>
+    </div>
+  </section>
+
+  <section class="panel">
+      <div class="ph"><div><span class="tag">Words</span><h2>In the responders' words</h2><p>Responders add a short note when they flag a need. Notes are sorted into themes by keyword. Each bar shows the share of flagged incidents that mention the theme.</p></div></div>
+      <div class="viz wordsplit">
+        <div id="words"></div>
+        <div><div class="ladhead"><h3>How strongly psychosocial support was urged</h3><label>Group by <select id="sevDim" aria-label="Group by"></select></label></div>
+        <div id="ladder"></div></div>
+      </div>
+  </section>
+
+  <section class="panel">
+    <div class="ph"><div><span class="tag">Log</span><h2>Incident log</h2><p id="logcount"></p></div></div>
+    <div class="logwrap"><table class="log" id="log"></table></div>
+    <div class="more"><button class="btn" id="more">Show 25 more</button></div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Source</b><br><span id="srcline">Incident records from the OCHA oPt demolition dataset.</span> Data scraped from <a href="https://www.ochaopt.org/data/demolition" target="_blank" rel="noopener">ochaopt.org/data/demolition</a>. One row is one incident; places are positioned at the median recorded coordinate for the locality. This page reads <code>incidents.csv</code> directly in your browser.</p>
+    <p><b>Needs</b><br>Flags are what responders assessed as needed after an incident. They are first recorded systematically in 2014, so earlier years are drawn but left out of every rate. The free-text health-need field is empty in this dataset and the health flag is rare, so psychosocial support, water and sanitation, and livelihood carry most of the picture. Notes are coded into themes by keyword, which is approximate.</p>
+    <p><b>Map and statistics</b><br>There is no basemap; contours and dotted outlines are drawn from the recorded locations and are not official boundaries. The map, triangle, web, funnel and words charts follow your filters. The driver and strata charts come from one model fitted on all assessed incidents. Association is not causation.</p>
+  </footer>
+</div>
+<div id="tip" role="tooltip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+
+<script>
+/* ================= incidents.csv -> page data, and the statistical model =================
+   Everything the page needs is derived here in the browser from the CSV, so updating the site means
+   replacing incidents.csv. Cleaning rules and statistics are identical to the earlier Python builder. */
+const ATLAS=(function(){
+const REQUIRED=['Governorate','Residentialarea','IncidentType','NumberofDisplacedHHs','Displaced people',
+ 'NumberofAffectedHHs','Affected people',' Demolished structures','Donor-funded structures','Date of incident','Area',
+ 'Reasonfordemolitioneviction (groups)','Whocarriedoutthedemolitioneviction','JV','x','y','Classification (groups)',
+ 'Affected_Boys','Affected_Girls','Affected_Men','Affected_Women','PsychoNeeded_Ind','Health','WASH ','Food','Shelter ',
+ 'Livelihood ','Legal aid','Education','ProtectivePresence_Ind','Reg. refugee','Classification','Year','PsychosocialNeed',
+ 'WASHNeed','LivelihoodNeed','Inhabited residential','Uninhabited residential','Agriculture','WASH','Infrastructure',
+ 'Livelihood','Other'];
+const TYPES=['Demolition (full)','Demolition (partial)','Demolition and Confiscation','Confiscation','Sealing','Not recorded'];
+const REASONS=['Lack of Permits','Punitive order','Military operation','Other'];
+const AREAS=['Area C','East Jerusalem','Area A','Area B'];
+const ACTORS=['Israeli Civil Administration','Jerusalem Municipality','Ministry of Interior','INPA','Israeli Forces','Israeli Settlers','Owner (self-demolition)','Other'];
+const ACTOR_BIT={'Israeli Civil Administration':0,'Jerusalem Municipality':1,'Ministry of Interior':2,'INPA':3,'Israeli Forces':4,'Israeli Settlers':5,'Self':6,'Other':7};
+const NEED_COLS=['PsychoNeeded_Ind','Health','WASH ','Food','Shelter ','Livelihood ','Legal aid','Education','ProtectivePresence_Ind'];
+const NEEDS=['Psychosocial support','Health care','Water, sanitation & hygiene','Food','Shelter','Livelihood support','Legal aid','Education','Protective presence'];
+const STRUCT_COLS=['Inhabited residential','Uninhabited residential','Agriculture','WASH','Infrastructure','Livelihood','Other'];
+const STRUCTS=['Inhabited homes','Uninhabited homes','Agricultural','Water & sanitation','Infrastructure','Livelihood assets','Other'];
+const REFUGEES=['Not refugee','Registered refugee','Partly refugee','Unknown'];
+const SETTLEMENTS=['Village','Town','Neighborhood','Herding / Bedouin','Camp','City'];
+const THEMES=[
+ ['Water tanks and cisterns','wash','WASHNeed','\\btanks?\\b|cistern|reservoir'],
+ ['Latrines and bathrooms','wash','WASHNeed','latrine|toilet|bathroom|lavator|sanit|hygien|shower|washroom|restroom|\\bwc\\b'],
+ ['Water network, wells and pipes','wash','WASHNeed','network|\\bwells?\\b|pipe|pump|borehole|spring'],
+ ['Animals and animal shelters','land','LivelihoodNeed','animal|livestock|sheep|goat|barn|herd|cattle|stable|poultry|chicken'],
+ ['Farmland, trees and crops','land','LivelihoodNeed','agricultur|farm|tree|crop|olive|greenhouse|plant|irrigat|\\bland\\b|orchard'],
+ ['Income and cash','land','LivelihoodNeed','income|cash|salary|wage|employ|\\bjob\\b|\\bwork|financial|money|business|\\bshop|mpca'],
+ ['Storage, tools and equipment','land','LivelihoodNeed','storage|\\btools?\\b|equipment|machin|fodder|\\bfeed\\b|tractor'],
+ ['Children','mind','PsychosocialNeed','child|\\bkids?\\b|\\bboys?\\b|\\bgirls?\\b|student|school|minor'],
+ ['Women','mind','PsychosocialNeed','\\bwom[ae]n|mother|\\bwife|female'],
+ ['Displaced families','mind','PsychosocialNeed','displaced|homeless|evict']
+].map(t=>({label:t[0],domain:t[1],col:t[2],rx:new RegExp(t[3])}));
+const NA_VALUES=new Set(['','#N/A','#N/A N/A','#NA','-1.#IND','-1.#QNAN','-NaN','-nan','1.#IND','1.#QNAN','<NA>','N/A','NA','NULL','NaN','None','n/a','nan','null']);
+const S=v=>(v==null||NA_VALUES.has(v))?null:v;                 // text, or null when empty
+const N=v=>{ if(v==null||v==='') return 0; const x=Number(v); return isFinite(x)?x:0; };
+const I=v=>Math.trunc(N(v));
+const sortedBy=(arr,key)=>arr.map((v,i)=>[key(v),i]).sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:a[1]-b[1]).map(p=>arr[p[1]]);
+const median=a=>{ if(!a.length) return NaN; const s=a.slice().sort((x,y)=>x-y), m=s.length>>1; return s.length%2?s[m]:(s[m-1]+s[m])/2; };
+
+function areaIndex(a){ a=a||''; if(a.startsWith('EJ')) return 1; if(a.includes('Area C')) return 0; if(a.includes('Area A')) return 2; if(a.includes('Area B')) return 3; return 0; }
+function refugeeIndex(v){ const s=String(S(v)||'-').trim(); return s.startsWith('Yes')?1:s.startsWith('Partially')?2:s==='No'?0:3; }
+function settlementName(v){
+  const c=S(v)||'Other';
+  const m={'Herding':'Herding / Bedouin','Bedouin':'Herding / Bedouin','Herding/ Bedouin':'Herding / Bedouin','Gov.(Main City)':'City','Na':'Town','Other':'Town'};
+  return m[c]||c;
+}
+function settlementIndex(v){ const i=SETTLEMENTS.indexOf(settlementName(v)); return i<0?1:i; }
+function reasonName(v){ v=S(v)||'Other'; return REASONS.includes(v)?v:'Other'; }
+function psychSeverity(flagged,txt){
+  if(!flagged) return 0; const t=String(S(txt)||'').toLowerCase();
+  if(/highly|urgent|sever|strongly|critical/.test(t)) return 3;
+  if(/consider|assess|evaluat|to be/.test(t)&&!/recommend|needed/.test(t)) return 1;
+  return 2;
+}
+function actorSet(v){ const s=new Set(); if(typeof v==='string') v.split(';').forEach(p=>{ p=p.trim(); if(p) s.add(p); }); return s; }
+function dayNum(s){ const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(s||''); return m?Date.UTC(+m[1],+m[2]-1,+m[3])/864e5:NaN; }
+
+/* ---- rows -> page data (same shape the page has always used) ---- */
+function build(rows){
+  const n=rows.length;
+  const gov=rows.map(r=>S(r['Governorate'])||'nan');
+  const res=rows.map(r=>S(r['Residentialarea'])||'nan');
+  const key=gov.map((g,i)=>g+'|'+res[i]);
+  const byLoc=new Map();
+  rows.forEach((r,i)=>{
+    let o=byLoc.get(key[i]); if(!o){ o={gov:gov[i],name:res[i],xs:[],ys:[],cl:new Map()}; byLoc.set(key[i],o); }
+    const x=S(r['x']), y=S(r['y']); if(x!=null&&isFinite(+x)) o.xs.push(+x); if(y!=null&&isFinite(+y)) o.ys.push(+y);
+    const c=S(r['Classification (groups)']); if(c!=null) o.cl.set(c,(o.cl.get(c)||0)+1);
+  });
+  const keys=[...byLoc.keys()].sort(); const locIdx=new Map(keys.map((k,i)=>[k,i]));
+  const counts=new Map(); gov.forEach(g=>counts.set(g,(counts.get(g)||0)+1));
+  const govs=sortedBy([...new Set(gov)],g=>-counts.get(g));
+  const govIdx=new Map(govs.map((g,i)=>[g,i]));
+  const r5=v=>isFinite(v)?+v.toFixed(5):null;
+  const locs=keys.map(k=>{ const o=byLoc.get(k); let best=null,bc=-1;
+    [...o.cl.keys()].sort().forEach(c=>{ if(o.cl.get(c)>bc){ bc=o.cl.get(c); best=c; } });
+    return {n:o.name,g:govIdx.get(o.gov),x:r5(median(o.xs)),y:r5(median(o.ys)),c:best==null?'':best}; });
+
+  const areaTxt=rows.map(r=>S(r['Area'])||'');
+  const place=rows.map((r,i)=>areaTxt[i].startsWith('EJ')?'East Jerusalem':(gov[i]==='Jerusalem'?'Jerusalem governorate (outside East Jerusalem)':gov[i]));
+  const typeRaw=rows.map(r=>S(r['IncidentType'])||'Not recorded');
+  const t=typeRaw.map(v=>{ const i=TYPES.indexOf(v); return i<0?5:i; });
+  const r=rows.map(x=>{ const i=REASONS.indexOf(S(x['Reasonfordemolitioneviction (groups)'])); return i<0?3:i; });
+  const year=rows.map(x=>Math.trunc(N(x['Year'])));
+  const prior=priorExposure(rows,key);
+
+  const D={
+    refs:REFUGEES, clss:SETTLEMENTS, places:null, rf:rows.map(x=>refugeeIndex(x['Reg. refugee'])),
+    cl:rows.map(x=>settlementIndex(x['Classification'])), pl:null, pr:prior,
+    ps3:rows.map(x=>psychSeverity(N(x['PsychoNeeded_Ind'])>0,x['PsychosocialNeed'])),
+    tm:rows.map(x=>{ let m=0; THEMES.forEach((th,b)=>{ if(th.rx.test(String(S(x[th.col])||'').toLowerCase())) m|=1<<b; }); return m; }),
+    themes:THEMES.map((th,i)=>({bit:i,label:th.label,domain:th.domain})),
+    stats:null, govs, types:TYPES, reasons:REASONS, areas:AREAS, actors:ACTORS, needs:NEEDS, structs:STRUCTS, locs,
+    d:rows.map(x=>String(S(x['Date of incident'])||'').slice(0,10)),
+    g:gov.map(g=>govIdx.get(g)), l:key.map(k=>locIdx.get(k)), t, r,
+    a:areaTxt.map(areaIndex), fz:areaTxt.map(a=>+a.includes('Firing')),
+    jv:rows.map(x=>+(x['JV']==='Yes')),
+    who:rows.map(x=>{ let m=0; actorSet(x['Whocarriedoutthedemolitioneviction']).forEach(p=>{ if(p in ACTOR_BIT) m|=1<<ACTOR_BIT[p]; }); return m; }),
+    st:rows.map(x=>I(x[' Demolished structures'])), don:rows.map(x=>I(x['Donor-funded structures'])),
+    dhh:rows.map(x=>I(x['NumberofDisplacedHHs'])), dp:rows.map(x=>I(x['Displaced people'])),
+    ahh:rows.map(x=>I(x['NumberofAffectedHHs'])), ap:rows.map(x=>I(x['Affected people'])),
+    sc:rows.map(x=>STRUCT_COLS.map(c=>Math.min(I(x[c]),999))),
+    nd:rows.map(x=>{ let m=0; NEED_COLS.forEach((c,i)=>{ if(I(x[c])>0) m|=1<<i; }); return m; }),
+    ab:rows.map(x=>I(x['Affected_Boys'])), ag:rows.map(x=>I(x['Affected_Girls'])),
+    am:rows.map(x=>I(x['Affected_Men'])), aw:rows.map(x=>I(x['Affected_Women']))
+  };
+  // the analysis frame (assessed incidents only) decides the order of places, as before
+  const A=analysisFrame(rows,gov,key,place,typeRaw,year,prior);
+  const inA=new Map(); A.rows.forEach(a=>inA.set(a.place,(inA.get(a.place)||0)+1));
+  const placesA=sortedBy([...inA.keys()],p=>-inA.get(p));
+  const allCount=new Map(); place.forEach(p=>allCount.set(p,(allCount.get(p)||0)+1));
+  const rest=sortedBy([...allCount.keys()].filter(p=>!placesA.includes(p)),p=>-allCount.get(p));
+  D.places=placesA.concat(rest);
+  const pIdx=new Map(D.places.map((p,i)=>[p,i])); D.pl=place.map(p=>pIdx.get(p));
+  D._frame=A; D._placesA=placesA;
+  return D;
+}
+
+function priorExposure(rows,key,win){
+  win=win||730; const out=new Array(rows.length).fill(0), by=new Map();
+  rows.forEach((r,i)=>{ const k=key[i]; let a=by.get(k); if(!a) by.set(k,a=[]); a.push([dayNum(String(S(r['Date of incident'])||'').slice(0,10)),i]); });
+  by.forEach(a=>{ for(let x=0;x<a.length;x++){ const tx=a[x][0]; if(!isFinite(tx)) continue; let c=0;
+    for(let y=0;y<a.length;y++){ const ty=a[y][0]; if(ty<tx&&ty>=tx-win) c++; } out[a[x][1]]=c; } });
+  return out;
+}
+
+function analysisFrame(rows,gov,key,place,typeRaw,year,prior){
+  const out=[];
+  rows.forEach((x,i)=>{
+    if(year[i]<ASSESS_FROM||typeRaw[i]==='Not recorded') return;
+    const rf=String(S(x['Reg. refugee'])||'-').trim();
+    const area=areaTxt(x), w=actorSet(x['Whocarriedoutthedemolitioneviction']);
+    const has=(...a)=>a.some(v=>w.has(v));
+    out.push({i,year:year[i],loc:key[i],place:place[i],
+      ps:+(N(x['PsychoNeeded_Ind'])>0),hl:+(N(x['Health'])>0),wa:+(N(x['WASH '])>0),lv:+(N(x['Livelihood '])>0),
+      type:typeRaw[i],reason:reasonName(x['Reasonfordemolitioneviction (groups)']),
+      ref:rf.startsWith('Yes')?'Registered refugee':rf.startsWith('Partially')?'Partly refugee':rf==='No'?'Not refugee':'Unknown',
+      cls:settlementName(x['Classification']),
+      area:area.startsWith('EJ')?'East Jerusalem':area.includes('Area A')?'Area A':area.includes('Area B')?'Area B':'Area C',
+      by_ICA:+w.has('Israeli Civil Administration'),by_JM:+w.has('Jerusalem Municipality'),by_Self:+w.has('Self'),
+      by_State:+has('Ministry of Interior','INPA','Israeli Forces'),by_Other:+has('Other','Israeli Settlers'),
+      s_home:+(N(x['Inhabited residential'])>0),s_empty:+(N(x['Uninhabited residential'])>0),s_agri:+(N(x['Agriculture'])>0),
+      s_wash:+(N(x['WASH'])>0),s_infra:+(N(x['Infrastructure'])>0),s_live:+(N(x['Livelihood'])>0),s_other:+(N(x['Other'])>0),
+      st:N(x[' Demolished structures']),ap:N(x['Affected people']),displaced:+(N(x['Displaced people'])>0),prior:prior[i]});
+  });
+  return {rows:out};
+}
+function areaTxt(x){ return S(x['Area'])||''; }
+const ASSESS_FROM=2014;
+
+/* ---- statistics ---- */
+const OUTCOMES=[['ps','Psychosocial support'],['wa','Water, sanitation & hygiene'],['lv','Livelihood support'],['hl','Health care']];
+const RIDGE={ps:0.25,wa:0.25,lv:0.25,hl:2.0};
+const GROUPS={
+ reason:[['reason=Punitive order','Punitive order'],['reason=Military operation','Military operation'],['reason=Other','Other reason']],
+ who:[['by_ICA','Israeli Civil Administration'],['by_JM','Jerusalem Municipality'],['by_State','Interior ministry, nature authority or forces'],['by_Self','Owner (self-demolition)'],['by_Other','Other or unspecified']],
+ type:[['type=Demolition (partial)','Partial demolition'],['type=Demolition and Confiscation','Demolition and confiscation'],['type=Confiscation','Confiscation'],['type=Sealing','Sealing']],
+ lost:[['s_home','Inhabited home'],['s_empty','Uninhabited residential'],['s_agri','Agricultural structure'],['s_live','Livelihood asset'],['s_wash','Water or sanitation structure'],['s_infra','Infrastructure'],['s_other','Other structure']],
+ people:[['displaced','People displaced'],['ref=Registered refugee','Registered refugee'],['ref=Partly refugee','Partly refugee']],
+ scale:[['lst','More structures (per doubling)'],['lap','More people affected (per doubling)'],['lpr','Repeat demolitions in locality, prior 2 years (per doubling)']],
+ settle:[['cls=Town','Town'],['cls=Neighborhood','Neighbourhood'],['cls=Herding / Bedouin','Herding or Bedouin community'],['cls=Camp','Refugee camp'],['cls=City','City']],
+ area:[['area=Area A','Area A'],['area=Area B','Area B']]
+};
+const GROUP_TITLES={reason:'Stated reason (vs lack of permit)',who:'Who carried it out (vs not involved)',type:'Incident type (vs full demolition)',lost:'What was lost (vs not lost)',people:'The people (vs not)',scale:'Scale and repetition',settle:'Settlement type (vs village)',area:'Zone (vs Area C or East Jerusalem)',gov:'Place (vs the average place)'};
+const FACTOR_BLOCKS={time:'Year (assessment practice)',place:'Place',event:'The event',loss:'What was lost',people:'The people',repeat:'Repetition'};
+
+const sig=z=>1/(1+Math.exp(-Math.max(-30,Math.min(30,z))));
+function erfc(x){ // Numerical Recipes, fractional error below 1.2e-7
+  const z=Math.abs(x), t=1/(1+0.5*z);
+  const r=t*Math.exp(-z*z-1.26551223+t*(1.00002368+t*(0.37409196+t*(0.09678418+t*(-0.18628806+t*(0.27886807+t*(-1.13520398+t*(1.48851587+t*(-0.82215223+t*0.17087277)))))))));
+  return x>=0?r:2-r;
+}
+const pTwo=z=>erfc(Math.abs(z)/Math.SQRT2);               // 2 * (1 - Phi(|z|))
+function wilson(k,n,z){ z=z||1.96; if(n===0) return [0,0,0]; const ph=k/n, d=1+z*z/n, c=(ph+z*z/(2*n))/d, h=z*Math.sqrt(ph*(1-ph)/n+z*z/(4*n*n))/d; return [ph,Math.max(0,c-h),Math.min(1,c+h)]; }
+const rd=(v,d)=>{ const f=Math.pow(10,d); return Math.round(v*f)/f; };
+
+function design(A,govs){
+  const n=A.length, names=[], blocks=[], kinds=[], cols=[];
+  const add=(nm,fn,blk,kind)=>{ const c=new Float64Array(n); for(let i=0;i<n;i++) c[i]=fn(A[i]); cols.push(c); names.push(nm); blocks.push(blk); kinds.push(kind||'x'); };
+  add('const',()=>1,'const','none');
+  const years=[...new Set(A.map(r=>r.year))].sort((a,b)=>a-b);
+  years.slice(1).forEach(y=>add('year='+y,r=>+(r.year===y),'time','year'));
+  GROUPS.reason.forEach(([k])=>add(k,r=>+(r.reason===k.split('=')[1]),'event'));
+  GROUPS.type.forEach(([k])=>add(k,r=>+(r.type===k.split('=')[1]),'event'));
+  GROUPS.who.forEach(([k])=>add(k,r=>r[k],'event'));
+  GROUPS.lost.forEach(([k])=>add(k,r=>r[k],'loss'));
+  add('lst',r=>Math.log2(1+r.st),'loss');
+  add('lap',r=>Math.log2(1+r.ap),'loss');
+  add('displaced',r=>r.displaced,'people');
+  GROUPS.people.slice(1).forEach(([k])=>add(k,r=>+(r.ref===k.split('=')[1]),'people'));
+  GROUPS.settle.forEach(([k])=>add(k,r=>+(r.cls===k.split('=')[1]),'place'));
+  GROUPS.area.forEach(([k])=>add(k,r=>+(r.area===k.split('=')[1]),'place'));
+  const lastG=govs[govs.length-1];
+  govs.slice(0,-1).forEach(g=>add('gov='+g,r=>+(r.place===g)-+(r.place===lastG),'place'));
+  add('lpr',r=>Math.log2(1+r.prior),'repeat');
+  const p=cols.length, ix=new Array(n), vl=new Array(n);
+  for(let i=0;i<n;i++){ const a=[], b=[]; for(let j=0;j<p;j++){ const v=cols[j][i]; if(v!==0){ a.push(j); b.push(v); } } ix[i]=Int32Array.from(a); vl[i]=Float64Array.from(b); }
+  return {sp:{n,p,ix,vl}, names, blocks, kinds, cols};
+}
+function subsetCols(sp,keep){
+  const map=new Int32Array(sp.p).fill(-1); let q=0; for(let j=0;j<sp.p;j++) if(keep[j]) map[j]=q++;
+  const ix=new Array(sp.n), vl=new Array(sp.n);
+  for(let i=0;i<sp.n;i++){ const a=[], b=[]; const x=sp.ix[i], v=sp.vl[i]; for(let k=0;k<x.length;k++){ const m=map[x[k]]; if(m>=0){ a.push(m); b.push(v[k]); } } ix[i]=Int32Array.from(a); vl[i]=Float64Array.from(b); }
+  return {n:sp.n,p:q,ix,vl};
+}
+function cholesky(H,p){           // lower triangle, in place; false if not positive definite
+  for(let j=0;j<p;j++){
+    let d=H[j*p+j]; for(let k=0;k<j;k++) d-=H[j*p+k]*H[j*p+k];
+    if(!(d>1e-12)) return false; const dj=Math.sqrt(d); H[j*p+j]=dj;
+    for(let i=j+1;i<p;i++){ let s=H[i*p+j]; for(let k=0;k<j;k++) s-=H[i*p+k]*H[j*p+k]; H[i*p+j]=s/dj; }
+  }
+  return true;
+}
+function cholSolve(L,p,b){
+  const y=new Float64Array(p), x=new Float64Array(p);
+  for(let i=0;i<p;i++){ let s=b[i]; for(let k=0;k<i;k++) s-=L[i*p+k]*y[k]; y[i]=s/L[i*p+i]; }
+  for(let i=p-1;i>=0;i--){ let s=y[i]; for(let k=i+1;k<p;k++) s-=L[k*p+i]*x[k]; x[i]=s/L[i*p+i]; }
+  return x;
+}
+function solveSym(Hlow,p,b){      // Hlow holds the lower triangle; copy, factor, solve
+  const L=Float64Array.from(Hlow); let ok=cholesky(L,p), jit=1e-9;
+  while(!ok&&jit<1){ const M=Float64Array.from(Hlow); for(let i=0;i<p;i++) M[i*p+i]+=jit; ok=cholesky(M,p); if(ok){ return cholSolve(M,p,b); } jit*=100; }
+  return cholSolve(L,p,b);
+}
+function invSym(Hlow,p){          // full symmetric inverse
+  const L=Float64Array.from(Hlow); let ok=cholesky(L,p), M=L;
+  if(!ok){ let jit=1e-9; while(!ok&&jit<1){ M=Float64Array.from(Hlow); for(let i=0;i<p;i++) M[i*p+i]+=jit; ok=cholesky(M,p); jit*=100; } }
+  const inv=new Float64Array(p*p), e=new Float64Array(p);
+  for(let j=0;j<p;j++){ e.fill(0); e[j]=1; const c=cholSolve(M,p,e); for(let i=0;i<p;i++) inv[i*p+j]=c[i]; }
+  return inv;
+}
+function accumulate(sp,y,lam,beta,rows){
+  const p=sp.p, H=new Float64Array(p*p), g=new Float64Array(p), pr=new Float64Array(rows.length);
+  for(let k=0;k<rows.length;k++){
+    const i=rows[k], ix=sp.ix[i], vl=sp.vl[i], m=ix.length; let eta=0;
+    for(let a=0;a<m;a++) eta+=vl[a]*beta[ix[a]];
+    const pi=sig(eta), w=pi*(1-pi), r=y[i]-pi; pr[k]=pi;
+    for(let a=0;a<m;a++){ const ja=ix[a], va=vl[a]; g[ja]+=va*r; const base=ja*p, wv=w*va; for(let b=0;b<=a;b++) H[base+ix[b]]+=wv*vl[b]; }
+  }
+  for(let j=0;j<p;j++){ H[j*p+j]+=lam[j]; g[j]-=lam[j]*beta[j]; }
+  return {H,g,pr};
+}
+function fitLogit(sp,y,lam,rows){
+  rows=rows||Int32Array.from({length:sp.n},(_,i)=>i);
+  const p=sp.p, beta=new Float64Array(p);
+  for(let it=0;it<80;it++){
+    const {H,g}=accumulate(sp,y,lam,beta,rows); const step=solveSym(H,p,g); let mx=0;
+    for(let j=0;j<p;j++){ beta[j]+=step[j]; mx=Math.max(mx,Math.abs(step[j])); }
+    if(mx<1e-7) break;
+  }
+  const f=accumulate(sp,y,lam,beta,rows);
+  return {beta,p:f.pr,H:f.H};
+}
+function loglik(y,pr,rows){ let s=0; for(let k=0;k<rows.length;k++){ const p=Math.min(1-1e-12,Math.max(1e-12,pr[k])), yi=y[rows[k]]; s+=yi*Math.log(p)+(1-yi)*Math.log(1-p); } return s; }
+function clusterCov(sp,y,pr,H,groups){
+  const p=sp.p, G=Math.max(...groups)+1, Sg=new Float64Array(G*p);
+  for(let i=0;i<sp.n;i++){ const r=y[i]-pr[i], ix=sp.ix[i], vl=sp.vl[i], base=groups[i]*p; for(let a=0;a<ix.length;a++) Sg[base+ix[a]]+=vl[a]*r; }
+  const meat=new Float64Array(p*p), scale=G/Math.max(G-1,1);
+  for(let g=0;g<G;g++){ const b=g*p; for(let a=0;a<p;a++){ const sa=Sg[b+a]; if(sa===0) continue; for(let c=0;c<p;c++) meat[a*p+c]+=sa*Sg[b+c]*scale; } }
+  const Hi=invSym(H,p), T=new Float64Array(p*p), cov=new Float64Array(p*p);
+  for(let a=0;a<p;a++) for(let k=0;k<p;k++){ const h=Hi[a*p+k]; if(h===0) continue; for(let c=0;c<p;c++) T[a*p+c]+=h*meat[k*p+c]; }
+  for(let a=0;a<p;a++) for(let k=0;k<p;k++){ const t=T[a*p+k]; if(t===0) continue; for(let c=0;c<p;c++) cov[a*p+c]+=t*Hi[k*p+c]; }
+  return {cov,Hi};
+}
+function rawOr(col,y,lam){
+  let b0=0,b1=0; const n=y.length;
+  for(let it=0;it<80;it++){
+    let h00=0,h01=0,h11=0,g0=0,g1=0;
+    for(let i=0;i<n;i++){ const x=col[i], p=sig(b0+b1*x), w=p*(1-p), r=y[i]-p; h00+=w; h01+=w*x; h11+=w*x*x; g0+=r; g1+=r*x; }
+    h11+=lam; g1-=lam*b1; const det=h00*h11-h01*h01, s0=(h11*g0-h01*g1)/det, s1=(-h01*g0+h00*g1)/det;
+    b0+=s0; b1+=s1; if(Math.max(Math.abs(s0),Math.abs(s1))<1e-7) break;
+  }
+  return Math.exp(b1);
+}
+function auc(y,p){
+  const n=p.length, ord=Array.from({length:n},(_,i)=>i).sort((a,b)=>p[a]-p[b]), rk=new Float64Array(n);
+  for(let i=0;i<n;){ let j=i; while(j+1<n&&p[ord[j+1]]===p[ord[i]]) j++; const r=(i+j)/2+1; for(let k=i;k<=j;k++) rk[ord[k]]=r; i=j+1; }
+  let n1=0,s=0; for(let i=0;i<n;i++) if(y[i]===1){ n1++; s+=rk[i]; } const n0=n-n1; if(!n1||!n0) return NaN;
+  return (s-n1*(n1+1)/2)/(n1*n0);
+}
+function mulberry(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function cvAuc(sp,y,lam,groups,k,seed){
+  k=k||5; const rng=mulberry(seed||7), G=Math.max(...groups)+1, fold=new Int32Array(G);
+  for(let g=0;g<G;g++) fold[g]=Math.floor(rng()*k);
+  const pred=new Float64Array(sp.n);
+  for(let f=0;f<k;f++){
+    const tr=[], te=[]; for(let i=0;i<sp.n;i++) (fold[groups[i]]===f?te:tr).push(i);
+    const m=fitLogit(sp,y,lam,Int32Array.from(tr));
+    te.forEach(i=>{ let eta=0; const ix=sp.ix[i], vl=sp.vl[i]; for(let a=0;a<ix.length;a++) eta+=vl[a]*m.beta[ix[a]]; pred[i]=sig(eta); });
+  }
+  return auc(y,pred);
+}
+const tick=()=>new Promise(r=>setTimeout(r,0));
+
+async function computeStats(D,onProgress){
+  const A=D._frame.rows, govs=D._placesA, n=A.length;
+  const dz=design(A,govs), sp=dz.sp, names=dz.names, blocks=dz.blocks, idx=new Map(names.map((nm,i)=>[nm,i]));
+  const gmap=new Map(); const groups=Int32Array.from(A.map(r=>{ if(!gmap.has(r.loc)) gmap.set(r.loc,gmap.size); return gmap.get(r.loc); }));
+  const all=Int32Array.from({length:n},(_,i)=>i);
+  const out={n,from:ASSESS_FROM,outcomes:{},titles:GROUP_TITLES,blocks:FACTOR_BLOCKS};
+  let done=0; const total=OUTCOMES.length;
+  for(const [oc,label] of OUTCOMES){
+    if(onProgress) onProgress(done/total); await tick();
+    const y=Float64Array.from(A.map(r=>r[oc]));
+    const lamv=Float64Array.from(dz.kinds.map(k=>k==='none'?0:(k==='year'?0.01:RIDGE[oc])));
+    const fit=fitLogit(sp,y,lamv,all), beta=fit.beta;
+    const cc=clusterCov(sp,y,fit.p,fit.H,groups), cov=cc.cov, Hi=cc.Hi, P=sp.p;
+    const se=new Float64Array(P); for(let j=0;j<P;j++) se[j]=Math.max(Math.sqrt(Math.max(cov[j*P+j],0)),Math.sqrt(Hi[j*P+j]));
+    const llFull=loglik(y,fit.p,all); let sumY=0; for(let i=0;i<n;i++) sumY+=y[i]; const p0=sumY/n;
+    const devNull=-2*loglik(y,new Float64Array(n).fill(p0),all);
+    const terms=[];
+    const mk=(g,key,lab,nWith,rate,orr,b,s)=>({g,k:key,l:lab,n:nWith,rate:rate&&rate.map(v=>rd(v,4)),orr:rd(orr,3),or:rd(Math.exp(b),3),lo:rd(Math.exp(b-1.96*s),3),hi:rd(Math.exp(b+1.96*s),3),p:rd(s>0?pTwo(b/s):pTwo(0),4)});
+    for(const g of ['reason','who','type','lost','people','scale','settle','area']){
+      for(const [key,lab] of GROUPS[g]){
+        const j=idx.get(key), col=dz.cols[j]; let nWith=0,k1=0;
+        if(g==='scale'){ nWith=n; k1=sumY; } else { for(let i=0;i<n;i++) if(col[i]>0){ nWith++; k1+=y[i]; } }
+        terms.push(mk(g,key,lab,nWith,wilson(k1,nWith),rawOr(col,y,RIDGE[oc]),beta[j],se[j]));
+      }
+    }
+    const gi=govs.slice(0,-1).map(g=>idx.get('gov='+g)), sumB=gi.reduce((s,j)=>s+beta[j],0);
+    govs.forEach((g,t)=>{
+      let b,s;
+      if(t<gi.length){ b=beta[gi[t]]; s=se[gi[t]]; }
+      else { b=-sumB; let vc=0,vh=0; for(const a of gi) for(const c of gi){ vc+=cov[a*P+c]; vh+=Hi[a*P+c]; } s=Math.max(Math.sqrt(Math.max(vc,0)),Math.sqrt(Math.max(vh,0))); }
+      const mask=Float64Array.from(A.map(r=>+(r.place===g))); let nWith=0,k1=0; for(let i=0;i<n;i++) if(mask[i]){ nWith++; k1+=y[i]; }
+      terms.push(mk('gov','gov='+g,g,nWith,wilson(k1,nWith),rawOr(mask,y,RIDGE[oc]),b,s));
+    });
+    const part={};
+    for(const blk of Object.keys(FACTOR_BLOCKS)){
+      await tick();
+      const inb=blocks.map(b=>b===blk);
+      const keep=inb.map(v=>!v), spa=subsetCols(sp,keep), lamA=lamv.filter((_,j)=>keep[j]);
+      const f2=fitLogit(spa,y,Float64Array.from(lamA),all);
+      const uniq=Math.max(0,-2*loglik(y,f2.p,all)-(-2*llFull));
+      const keepB=blocks.map((b,j)=>b==='const'||inb[j]), spb=subsetCols(sp,keepB), lamB=lamv.filter((_,j)=>keepB[j]);
+      const f3=fitLogit(spb,y,Float64Array.from(lamB),all);
+      const alone=Math.max(0,devNull-(-2*loglik(y,f3.p,all)));
+      part[blk]={unique:rd(uniq/devNull,4),alone:rd(alone/devNull,4)};
+    }
+    await tick();
+    const total_=(devNull-(-2*llFull))/devNull;
+    out.outcomes[oc]={label,events:sumY,rate:rd(p0,4),r2:rd(total_,4),auc:rd(cvAuc(sp,y,lamv,groups),3),terms,partition:part,
+      shared:rd(Math.max(0,total_-Object.values(part).reduce((s,v)=>s+v.unique,0)),4)};
+    done++;
+  }
+  out.places=govs;
+  if(onProgress) onProgress(1);
+  return out;
+}
+
+return {REQUIRED,build,computeStats,priorExposure};
+})();
+
+/* parse CSV text into page data; throws Error with a readable message */
+function loadCsvText(text,meta){
+  if(text.charCodeAt(0)===0xFEFF) text=text.slice(1);
+  const rows=d3.csvParse(text);
+  const cols=rows.columns||[];
+  const missing=ATLAS.REQUIRED.filter(c=>!cols.includes(c));
+  if(missing.length) throw new Error('The CSV is missing columns the page needs ('+missing.map(c=>'"'+c+'"').join(', ')+'). Did the report change? Re-run the scraper and check its column list.');
+  if(!rows.length) throw new Error('The CSV has no rows.');
+  const D=ATLAS.build(rows);
+  const dates=D.d.filter(Boolean).sort();
+  D.meta={updated:(meta&&meta.updated)||'',rows:rows.length,latest:dates.length?dates[dates.length-1]:''};
+  return D;
+}
+
+function boot(DATA){
+'use strict';
+const D = DATA, N = D.d.length;
+const $ = s => document.querySelector(s);
+const fmt = d3.format(','), p0 = d3.format('.0%'), p1 = d3.format('.1%');
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const NEED_SHORT = ['Psychosocial','Health','Water & sanitation','Food','Shelter','Livelihood','Legal aid','Education','Protection'];
+const NEED_CODE = ['PS','HE','WA','FO','SH','LI','LE','ED','PR'];
+const ASSESS_FROM = 2014;
+
+/* ---------- data ---------- */
+const R = new Array(N);
+for (let i=0;i<N;i++){
+  const ds = D.d[i], y = +ds.slice(0,4), m = +ds.slice(5,7)-1, nd = D.nd[i];
+  R[i] = {i, ds, y, ym:y*12+m, g:D.g[i], l:D.l[i], t:D.t[i], r:D.r[i], a:D.a[i], fz:D.fz[i], jv:D.jv[i], who:D.who[i],
+    st:D.st[i], don:D.don[i], dhh:D.dhh[i], dp:D.dp[i], ahh:D.ahh[i], ap:D.ap[i], sc:D.sc[i], nd, hw:(nd&3)?1:0,
+    as:y>=ASSESS_FROM?1:0, ab:D.ab[i], ag:D.ag[i], am:D.am[i], aw:D.aw[i], rf:D.rf[i], cl:D.cl[i], pl:D.pl[i], pr:D.pr[i], ps3:D.ps3[i], tm:D.tm[i]};
+}
+const MIN_YM = d3.min(R,r=>r.ym), MAX_YM = d3.max(R,r=>r.ym);
+const locName = D.locs.map(l=>l.n);
+const DIMS = {
+  gov:{label:'Governorate', labels:D.govs, test:(r,k)=>r.g===k},
+  type:{label:'Incident type', labels:D.types.slice(0,5), test:(r,k)=>r.t===k},
+  reason:{label:'Reason given', labels:D.reasons, test:(r,k)=>r.r===k},
+  area:{label:'Area', labels:D.areas, test:(r,k)=>r.a===k},
+  actor:{label:'Who carried it out', labels:D.actors, test:(r,k)=>(r.who>>k)&1},
+  struct:{label:'What was destroyed', labels:D.structs, test:(r,k)=>r.sc[k]>0},
+  zone:{label:'Zone', labels:['Jordan Valley','Firing zone'], test:(r,k)=>k===0?r.jv===1:r.fz===1},
+  place:{label:'Place', labels:D.places, test:(r,k)=>r.pl===k},
+  ref:{label:'Refugee status', labels:D.refs, test:(r,k)=>r.rf===k},
+  cls:{label:'Settlement type', labels:D.clss, test:(r,k)=>r.cl===k},
+  disp:{label:'Displacement', labels:['People displaced','No one displaced'], test:(r,k)=>k===0?r.dp>0:r.dp===0},
+  loc:{label:'Locality', labels:locName, test:(r,k)=>r.l===k}
+};
+const F = {t0:MIN_YM, t1:MAX_YM, sets:{}};
+Object.keys(DIMS).forEach(k=>F.sets[k]=new Set());
+function sel(skip, noTime){
+  const act = Object.keys(DIMS).filter(k=>F.sets[k].size && k!==skip);
+  return R.filter(r=>{
+    if(!noTime && (r.ym<F.t0 || r.ym>F.t1)) return false;
+    for(const k of act){ let ok=false; for(const v of F.sets[k]){ if(DIMS[k].test(r,v)){ok=true;break;} } if(!ok) return false; }
+    return true;
+  });
+}
+function summ(rs){
+  const s={n:0,st:0,ap:0,dp:0,don:0,as:0,hw:0,nc:new Array(9).fill(0),nn:0,ab:0,ag:0,am:0,aw:0};
+  for(const r of rs){
+    s.n++; s.st+=r.st; s.ap+=r.ap; s.dp+=r.dp; s.don+=r.don; s.ab+=r.ab; s.ag+=r.ag; s.am+=r.am; s.aw+=r.aw;
+    if(r.as){ s.as++; s.hw+=r.hw; for(let k=0;k<9;k++) if((r.nd>>k)&1){ s.nc[k]++; s.nn++; } }
+  }
+  return s;
+}
+const ALL = summ(R);
+const BASE_HW = ALL.hw/ALL.as;
+
+/* ---------- theme ---------- */
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function isDark(){ const t=document.documentElement.dataset.theme; if(t==='dark')return true; if(t==='light')return false; return !matchMedia('(prefers-color-scheme: light)').matches; }
+const PAL = {
+  dark:{reason:['#6c9a55','#4a97ad','#d17a45','#aaa486'], type:['#6c9a55','#c79a3a','#4a97ad','#d17a45','#aaa486'],
+        need:['#d17a45','#c98b95','#4a97ad','#aaa486','#6c9a55','#c79a3a','#aaa486','#aaa486','#aaa486'], demo:['#6c9a55','#d17a45','#4a97ad','#c79a3a'],
+        out:{ps:'#d17a45',wa:'#4a97ad',lv:'#c79a3a',hl:'#c98b95'}, lens:{body:'#4a97ad',mind:'#d17a45',land:'#c79a3a',other:'#aaa486'},
+        strata:{time:'#aaa486',place:'#6c9a55',event:'#d17a45',loss:'#c79a3a',people:'#4a97ad',repeat:'#c98b95'}},
+  light:{reason:['#3c5e34','#3d7c8f','#b8632c','#a89f78'], type:['#3c5e34','#c19a2e','#3d7c8f','#b8632c','#a89f78'],
+        need:['#b8632c','#8c4552','#3d7c8f','#a89f78','#3c5e34','#c19a2e','#a89f78','#a89f78','#a89f78'], demo:['#3c5e34','#b8632c','#3d7c8f','#c19a2e'],
+        out:{ps:'#b8632c',wa:'#3d7c8f',lv:'#c19a2e',hl:'#8c4552'}, lens:{body:'#3d7c8f',mind:'#b8632c',land:'#c19a2e',other:'#a89f78'},
+        strata:{time:'#a89f78',place:'#3c5e34',event:'#b8632c',loss:'#c19a2e',people:'#3d7c8f',repeat:'#8c4552'}}
+};
+const pal = () => isDark()?PAL.dark:PAL.light;
+function onColor(bg){ return d3.lab(bg).l>62 ? css('--on-light') : css('--on-dark'); }
+let needRamp, divRamp;
+function buildRamps(){
+  needRamp = d3.scaleLinear().domain([0,.5,1]).range([css('--need0'),css('--need1'),css('--need2')]).interpolate(d3.interpolateRgb).clamp(true);
+  divRamp = d3.scaleLinear().domain([0.4,1,2.5]).range([css('--lo'),css('--mid'),css('--hi')]).interpolate(d3.interpolateRgb).clamp(true);
+}
+function mon(ym){ return MONTHS[ym%12]+' '+Math.floor(ym/12); }
+
+/* ---------- tooltip ---------- */
+const tip = $('#tip');
+function showTip(html,x,y){
+  tip.innerHTML = html; tip.classList.add('on');
+  const w = tip.offsetWidth, h = tip.offsetHeight, vw = innerWidth, vh = innerHeight;
+  let tx = x+14, ty = y+14; if(tx+w>vw-8) tx = x-w-14; if(ty+h>vh-8) ty = y-h-14;
+  tip.style.left = Math.max(8,tx)+'px'; tip.style.top = Math.max(8,ty)+'px';
+}
+function hideTip(){ tip.classList.remove('on'); }
+
+/* ---------- controls state ---------- */
+const UI = {color:'hw', size:'st', dens:true, hull:true, tlMetric:'st', lines:new Set([0,2,5]), ternDim:'reason', outcome:'ps', funOut:'ps', sevDim:'reason', page:1, play:null};
+const COLOR_OPTS = [['hw','Health or psychosocial need'],['n0','Psychosocial support need'],['n1','Health care need'],['n2','Water & sanitation need'],['n3','Food need'],['n4','Shelter need'],['n5','Livelihood need'],['n6','Legal aid need'],['n7','Education need'],['n8','Protective presence need'],['reason','Main reason given'],['type','Incident type']];
+$('#colorBy').innerHTML = COLOR_OPTS.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join('');
+$('#colorBy').onchange = e=>{UI.color=e.target.value; drawMap(); drawLegend();};
+function wireSeg(id, key, cb){
+  $(id).addEventListener('click', e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    UI[key]=b.dataset.v; $(id).querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed', x===b));
+    cb();
+  });
+}
+wireSeg('#sizeBy','size',()=>{drawMap();drawLegend();});
+wireSeg('#tlMetric','tlMetric',()=>{tlKey=''; renderTimeline();});
+$('#tDens').onchange = e=>{UI.dens=e.target.checked; drawMap();};
+$('#tHull').onchange = e=>{UI.hull=e.target.checked; drawMap();};
+$('#more').onclick = ()=>{UI.page++; renderLog();};
+const LINE_NEEDS = [0,1,2,5];
+$('#lineChips').innerHTML = LINE_NEEDS.map(k=>`<button class="lc" data-k="${k}" aria-pressed="${UI.lines.has(k)}"><i></i>${NEED_SHORT[k]}</button>`).join('');
+function paintLineChips(){ $('#lineChips').querySelectorAll('.lc').forEach(b=>{ b.querySelector('i').style.background = pal().need[+b.dataset.k]; }); }
+$('#lineChips').addEventListener('click', e=>{
+  const b=e.target.closest('.lc'); if(!b) return; const k=+b.dataset.k;
+  UI.lines.has(k)?UI.lines.delete(k):UI.lines.add(k); b.setAttribute('aria-pressed', UI.lines.has(k)); tlKey=''; renderTimeline();
+});
+
+/* ---------- filter helpers ---------- */
+function toggle(dim,k,multi){
+  const s=F.sets[dim];
+  if(s.has(k)) s.delete(k); else { s.add(k); }
+  UI.page=1; update();
+}
+function clearAll(){ Object.values(F.sets).forEach(s=>s.clear()); F.t0=MIN_YM; F.t1=MAX_YM; UI.page=1; update(); }
+function renderChips(){
+  const out=[];
+  if(F.t0>MIN_YM||F.t1<MAX_YM) out.push(`<button class="chip" data-t="time"><b>Period</b> ${mon(F.t0)} – ${mon(F.t1)}<i>×</i></button>`);
+  for(const k of Object.keys(DIMS)) for(const v of F.sets[k]) out.push(`<button class="chip" data-d="${k}" data-v="${v}"><b>${DIMS[k].label}</b> ${DIMS[k].labels[v]}<i>×</i></button>`);
+  $('#chips').innerHTML = out.length ? out.join('')+`<button class="linkbtn" data-t="all">Clear all</button>` : `<span class="none">Showing all incidents. Pick a place, period, reason or need to filter.</span>`;
+}
+$('#chips').addEventListener('click', e=>{
+  const c=e.target.closest('button'); if(!c) return;
+  if(c.dataset.t==='all') return clearAll();
+  if(c.dataset.t==='time'){ F.t0=MIN_YM; F.t1=MAX_YM; return update(); }
+  F.sets[c.dataset.d].delete(+c.dataset.v); UI.page=1; update();
+});
+
+/* ---------- KPIs + reading line ---------- */
+function renderKpis(cur){
+  const s=summ(cur), as=cur.filter(r=>r.as), r3=as.length?rates3(as):null;
+  const tiles=[
+    ['Incidents', fmt(s.n), `${fmt(s.as)} with needs assessed`],
+    ['Structures demolished', fmt(s.st), s.don?`${fmt(s.don)} donor-funded`:'none donor-funded'],
+    ['People affected', fmt(s.ap), `${fmt(s.dp)} displaced`],
+    ['Mind · psychosocial need', r3?p0(r3[1]):'n/a', r3?`of assessed incidents · all: ${p0(BASE3[1])}`:'No assessed incidents','key'],
+    ['Body · health or water need', r3?p0(r3[0]):'n/a', r3?`of assessed incidents · all: ${p0(BASE3[0])}`:'No assessed incidents','key'],
+    ['Land · livelihood need', r3?p0(r3[2]):'n/a', r3?`of assessed incidents · all: ${p0(BASE3[2])}`:'No assessed incidents','key']
+  ];
+  $('#kpis').innerHTML = tiles.map(t=>`<div class="kpi ${t[3]||''}"><div class="lab">${t[0]}</div><div class="val">${t[1]}</div><div class="note">${t[2]}</div></div>`).join('');
+  let txt;
+  if(!r3) txt = 'None of the incidents in this selection have needs recorded, because assessments start in 2014.';
+  else {
+    txt = `In this selection <strong>${p0(r3[1])}</strong> of assessed incidents flagged psychosocial support, <strong>${p0(r3[0])}</strong> health care or water and sanitation, and <strong>${p0(r3[2])}</strong> livelihood support (all records: ${p0(BASE3[1])}, ${p0(BASE3[0])} and ${p0(BASE3[2])}).`;
+    if(as.length>=20){ const nm=['body','mind','land'], dev=[0,1,2].map(i=>({i,ratio:r3[i]/BASE3[i]})).sort((a,b)=>Math.abs(Math.log(b.ratio))-Math.abs(Math.log(a.ratio)))[0];
+      if(Math.abs(dev.ratio-1)>.15) txt+=` The biggest departure from the overall pattern is the <strong>${nm[dev.i]}</strong>, ${dev.ratio>1?'flagged more':'flagged less'} often than usual.`; }
+  }
+  $('#read').innerHTML = txt;
+}
+
+/* ---------- people affected + places ---------- */
+function renderDemo(cur){
+  const s=summ(cur), tot=s.ab+s.ag+s.am+s.aw, P=pal().demo;
+  const items=[['Men',s.am,0],['Women',s.aw,0],['Boys',s.ab,1],['Girls',s.ag,1]];
+  if(!tot){ $('#demo').innerHTML='<div class="empty">No people recorded.</div>'; return; }
+  const raw=items.map(it=>it[1]/tot*100), fl=raw.map(Math.floor); let rem=100-d3.sum(fl);
+  raw.map((v,i)=>[v-fl[i],i]).sort((a,b)=>b[0]-a[0]).slice(0,rem).forEach(a=>fl[a[1]]++);
+  const dots=[]; items.forEach((it,i)=>{ for(let j=0;j<fl[i];j++) dots.push(i); });
+  $('#demo').innerHTML = `<div class="waffle" role="img" aria-label="${items.map(it=>it[0]+' '+p0(it[1]/tot)).join(', ')}">${dots.map(i=>`<i class="${items[i][2]?'kid':''}" style="background:${P[i]}"></i>`).join('')}</div>
+  <div class="key"><ul>${items.map((it,i)=>`<li><i style="background:${P[i]}"></i>${it[0]}<b>${fmt(it[1])}</b></li>`).join('')}</ul></div>
+  <p class="cap">Children are <b>${p0((s.ab+s.ag)/tot)}</b> of the people recorded.</p>`;
+}
+let locAgg=[];
+function renderPlaces(){
+  const list = locAgg.slice().sort((a,b)=>b.s.st-a.s.st).slice(0,40), mx=list.length?list[0].s.st:1;
+  $('#places').innerHTML = list.map(a=>{
+    const r=a.s.as?a.s.hw/a.s.as:null;
+    return `<li><button data-l="${a.l}" aria-pressed="${F.sets.loc.has(a.l)}"><span class="nm">${a.name}<small>${D.govs[a.g]}</small></span><span class="rt">${r==null?'–':p0(r)}</span><span class="bar"><i style="width:${Math.max(2,a.s.st/mx*100)}%"></i></span></button></li>`;
+  }).join('') || '<li class="empty">No places in this selection.</li>';
+}
+$('#places').addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) toggle('loc',+b.dataset.l); });
+
+/* ---------- map ---------- */
+const canvas=$('#map'), ctx=canvas.getContext('2d');
+const M={w:0,h:0,dpr:1,proj:null,tf:d3.zoomIdentity,items:[],hover:null,hulls:[]};
+const zoom=d3.zoom().scaleExtent([1,60]).on('zoom',e=>{M.tf=e.transform; drawMap();});
+d3.select(canvas).call(zoom).on('dblclick.zoom',null);
+function sizeMap(){
+  const w=$('#mapwrap').clientWidth, h=$('#mapwrap').clientHeight; if(!w||!h) return;
+  M.w=w; M.h=h; M.dpr=Math.min(2,devicePixelRatio||1);
+  canvas.width=w*M.dpr; canvas.height=h*M.dpr;
+  const pts=D.locs.filter(l=>l.x!=null).map(l=>[l.x,l.y]);
+  M.proj=d3.geoMercator().fitExtent([[44,34],[w-44,h-34]],{type:'MultiPoint',coordinates:pts});
+  zoom.extent([[0,0],[w,h]]).translateExtent([[-w,-h],[2*w,2*h]]);
+  M.hulls=D.govs.map((g,gi)=>{
+    const p=D.locs.filter(l=>l.g===gi&&l.x!=null).map(l=>M.proj([l.x,l.y]));
+    const hull=p.length>=3?d3.polygonHull(p):null; if(!hull) return null;
+    const c=d3.polygonCentroid(hull); const grown=hull.map(q=>{const dx=q[0]-c[0],dy=q[1]-c[1],d=Math.hypot(dx,dy)||1;return [q[0]+dx/d*7,q[1]+dy/d*7];});
+    return {gi,hull:grown,c};
+  }).filter(Boolean);
+}
+function buildItems(){
+  const base=sel('loc'); const by=new Map();
+  for(const r of base){ let a=by.get(r.l); if(!a){a={l:r.l,rows:[]};by.set(r.l,a);} a.rows.push(r); }
+  const items=[];
+  for(const a of by.values()){
+    const L=D.locs[a.l]; const s=summ(a.rows);
+    // dominant reason / type by structures
+    const rc=[0,0,0,0], tc=[0,0,0,0,0,0];
+    for(const r of a.rows){ rc[r.r]+=Math.max(1,r.st); tc[r.t]+=Math.max(1,r.st); }
+    items.push({l:a.l,name:L.n,g:L.g,x:L.x,y:L.y,s,rea:rc.indexOf(Math.max(...rc)),typ:tc.indexOf(Math.max(...tc))});
+  }
+  M.items=items;
+}
+function metricOf(it){ const v=UI.size==='st'?it.s.st:UI.size==='ap'?it.s.ap:it.s.n; return v; }
+function colorOfItem(it){
+  const P=pal(), c=UI.color;
+  if(c==='reason') return P.reason[it.rea];
+  if(c==='type') return P.type[Math.min(4,it.typ)];
+  if(it.s.as<3) return null;
+  const rate = c==='hw'? it.s.hw/it.s.as : it.s.nc[+c.slice(1)]/it.s.as;
+  return needRamp(rate);
+}
+function drawMap(){
+  if(!M.proj) return;
+  const {w,h,dpr,tf}=M; ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,w,h);
+  ctx.fillStyle=css('--map'); ctx.fillRect(0,0,w,h);
+  const k=tf.k, sx=x=>tf.applyX(x), sy=y=>tf.applyY(y), INK=css('--ink');
+  // registration crosses instead of a graticule
+  ctx.strokeStyle=css('--grid'); ctx.lineWidth=1.5; ctx.beginPath();
+  for(let lon=34.8;lon<=35.81;lon+=0.2) for(let lat=31.2;lat<=32.71;lat+=0.2){ const p=M.proj([lon,lat]), x=sx(p[0]), y=sy(p[1]); ctx.moveTo(x-5,y); ctx.lineTo(x+5,y); ctx.moveTo(x,y-5); ctx.lineTo(x,y+5); }
+  ctx.stroke();
+  const items=M.items.filter(i=>i.x!=null).map(i=>{const p=M.proj([i.x,i.y]); return Object.assign(i,{px:sx(p[0]),py:sy(p[1])});});
+  // topographic contours of where demolition is densest
+  if(UI.dens && items.length){
+    const pts=items.map(i=>({x:i.px,y:i.py,w:Math.sqrt(1+i.s.st)}));
+    const bw=Math.max(10,Math.min(26,14*Math.pow(k,.45)));
+    const cs=d3.contourDensity().x(d=>d.x).y(d=>d.y).weight(d=>d.w).size([w,h]).bandwidth(bw).thresholds(9)(pts);
+    const path=d3.geoPath(null,ctx), dens=css('--dens'); ctx.lineJoin='round';
+    cs.forEach((c,i)=>{ ctx.beginPath(); path(c); ctx.globalAlpha=.045+.03*i; ctx.fillStyle=dens; ctx.fill(); ctx.globalAlpha=.4+.05*i; ctx.strokeStyle=dens; ctx.lineWidth=i%3===2?1.4:.7; ctx.stroke(); });
+    ctx.globalAlpha=1;
+  }
+  // dotted governorate outlines
+  if(UI.hull){
+    ctx.strokeStyle=css('--hull'); ctx.lineWidth=2; ctx.lineCap='round'; ctx.setLineDash([.1,6]);
+    const line=d3.line().curve(d3.curveCatmullRomClosed.alpha(.5)).context(ctx);
+    M.hulls.forEach(hh=>{ ctx.beginPath(); line(hh.hull.map(q=>[sx(q[0]),sy(q[1])])); ctx.stroke(); });
+    ctx.setLineDash([]); ctx.lineCap='butt';
+    const fade=Math.max(0,.6*(1-(k-1)/6));
+    if(false){ ctx.globalAlpha=fade; ctx.fillStyle=css('--ink2'); ctx.font='800 17px '+css('--f-display'); ctx.textAlign='center'; if('letterSpacing' in ctx) ctx.letterSpacing='3px';
+      M.hulls.forEach(hh=>{ ctx.fillText(D.govs[hh.gi].toUpperCase(), sx(hh.c[0]), sy(hh.c[1])); });
+      if('letterSpacing' in ctx) ctx.letterSpacing='0px'; ctx.globalAlpha=1; }
+  }
+  // ring-and-core marks: the ring is the size of the loss, the filled core is the share of assessed incidents with the need
+  const mx=d3.max(items,metricOf)||1, rs=d3.scaleSqrt().domain([0,mx]).range([2.4,Math.min(26,w/22)]);
+  const grow=Math.pow(k,.38), selSet=F.sets.loc, hasSel=selSet.size>0, needMode=(UI.color!=='reason'&&UI.color!=='type');
+  items.forEach(i=>{ i.r=Math.max(2.4,rs(metricOf(i))*grow); });
+  items.sort((a,b)=>b.r-a.r);
+  const hollow=css('--mute'), bed=css('--panel');
+  for(const it of items){
+    if(it.px<-40||it.py<-40||it.px>w+40||it.py>h+40) continue;
+    const col=colorOfItem(it), isSel=selSet.has(it.l), dimmed=hasSel&&!isSel;
+    ctx.beginPath(); ctx.arc(it.px,it.py,it.r,0,6.2832);
+    ctx.globalAlpha=dimmed?.12:.6; ctx.fillStyle=bed; ctx.fill();
+    ctx.globalAlpha=dimmed?.35:1; ctx.lineWidth=1.3; ctx.strokeStyle=col?INK:hollow;
+    if(!col) ctx.setLineDash([3,3]); ctx.stroke(); ctx.setLineDash([]);
+    if(col){
+      let share=1; if(needMode){ const c=UI.color; share=(c==='hw'?it.s.hw:it.s.nc[+c.slice(1)])/it.s.as; }
+      const rr=it.r*Math.sqrt(Math.max(0,share));
+      if(rr>.6){ ctx.globalAlpha=dimmed?.3:.95; ctx.beginPath(); ctx.arc(it.px,it.py,rr,0,6.2832); ctx.fillStyle=col; ctx.fill(); }
+    }
+    if(isSel||M.hover===it){ ctx.globalAlpha=1; ctx.lineWidth=3; ctx.strokeStyle=INK; ctx.beginPath(); ctx.arc(it.px,it.py,it.r+3.5,0,6.2832); ctx.stroke(); }
+  }
+  { const gf=Math.max(0,.9*(1-(k-1)/5));
+    if(UI.hull&&gf>.05){ ctx.globalAlpha=gf; ctx.font='800 15px '+css('--f-display'); ctx.textAlign='center'; if('letterSpacing' in ctx) ctx.letterSpacing='2px';
+      ctx.lineWidth=4; ctx.lineJoin='round'; ctx.strokeStyle=css('--map'); ctx.fillStyle=css('--ink');
+      M.hulls.forEach(hh=>{ const t=D.govs[hh.gi].toUpperCase(), X=sx(hh.c[0]), Y=sy(hh.c[1]); ctx.strokeText(t,X,Y); ctx.fillText(t,X,Y); });
+      if('letterSpacing' in ctx) ctx.letterSpacing='0px'; ctx.globalAlpha=1; } }
+  ctx.globalAlpha=1;
+  if(k>2.2){
+    ctx.font='600 11px '+css('--f-body'); ctx.textAlign='left'; ctx.fillStyle=INK; ctx.strokeStyle=css('--map'); ctx.lineWidth=3.5;
+    const shown=[]; items.slice().sort((a,b)=>b.s.st-a.s.st).forEach(it=>{
+      if(shown.length>40||it.px<0||it.py<0||it.px>w||it.py>h) return;
+      if(shown.some(o=>Math.abs(o.px-it.px)<70&&Math.abs(o.py-it.py)<14)) return;
+      shown.push(it); ctx.strokeText(it.name,it.px+it.r+5,it.py+4); ctx.fillText(it.name,it.px+it.r+5,it.py+4);
+    });
+  }
+  // ruler-style scale bar
+  const a=M.proj.invert([(w/2-tf.x)/k,(h/2-tf.y)/k]), b=M.proj.invert([(w/2+100-tf.x)/k,(h/2-tf.y)/k]);
+  const km=d3.geoDistance(a,b)*6371; const nice=[1,2,5,10,20,50].filter(n=>n<=km).pop()||1, px=100*nice/km;
+  const bx=w-px-14, by=h-16; ctx.strokeStyle=INK; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(bx,by-5); ctx.lineTo(bx,by); ctx.lineTo(bx+px,by); ctx.lineTo(bx+px,by-5); ctx.stroke();
+  ctx.fillStyle=INK; ctx.font='700 11px '+css('--f-mono'); ctx.textAlign='right'; ctx.fillText(nice+' km',bx+px,by-9);
+  M.drawn=items; M.qt=d3.quadtree().x(d=>d.px).y(d=>d.py).addAll(items);
+}
+function drawLegend(){
+  const c=UI.color, P=pal(); let html='';
+  if(c==='reason') html=`<div class="sw">${D.reasons.map((r,i)=>`<span><i style="background:${P.reason[i]}"></i>${r}</span>`).join('')}</div>`;
+  else if(c==='type') html=`<div class="sw">${D.types.slice(0,5).map((r,i)=>`<span><i style="background:${P.type[i]}"></i>${r}</span>`).join('')}</div>`;
+  else html=`<div>${COLOR_OPTS.find(o=>o[0]===c)[1]}, share of assessed incidents</div><div class="ramp"></div><div class="rl"><span>0%</span><span>50%</span><span>100%</span></div><div style="margin-top:5px"><span class="hollow"></span>fewer than 3 assessed incidents</div>`;
+  html+=`<div style="margin-top:5px">Ring size = ${UI.size==='st'?'structures demolished':UI.size==='ap'?'people affected':'incidents'}${(UI.color==='reason'||UI.color==='type')?'':'. Filled core = share of assessed incidents with the need.'}</div>`;
+  $('#legend').innerHTML=html;
+}
+function hit(e){
+  const r=canvas.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
+  if(!M.qt) return null; const f=M.qt.find(x,y,40); if(!f) return null;
+  return Math.hypot(f.px-x,f.py-y)<=f.r+3 ? f : null;
+}
+canvas.addEventListener('pointermove',e=>{
+  const it=hit(e); if(it!==M.hover){ M.hover=it; drawMap(); }
+  if(!it){ hideTip(); canvas.style.cursor=''; return; }
+  canvas.style.cursor='pointer';
+  const s=it.s, rate=v=>s.as?p0(v/s.as):'n/a';
+  showTip(`<div class="t">${it.name}</div><div class="m">${D.govs[it.g]} · ${D.locs[it.l].c||'locality'}</div>
+  <div class="m"><span class="k">${fmt(s.n)}</span> incidents · <span class="k">${fmt(s.st)}</span> structures · <span class="k">${fmt(s.ap)}</span> people affected</div>
+  <div class="m" style="margin-top:4px">Of <span class="k">${s.as}</span> assessed: health or psychosocial <span class="k">${rate(s.hw)}</span>, water & sanitation <span class="k">${rate(s.nc[2])}</span>, shelter <span class="k">${rate(s.nc[4])}</span>, livelihood <span class="k">${rate(s.nc[5])}</span></div>
+  <div class="m" style="margin-top:4px;color:var(--mute)">Click to isolate</div>`, e.clientX, e.clientY);
+});
+canvas.addEventListener('pointerleave',()=>{ M.hover=null; hideTip(); drawMap(); });
+canvas.addEventListener('click',e=>{ const it=hit(e); if(it) toggle('loc',it.l); });
+$('#resetView').onclick=()=>d3.select(canvas).transition().duration(350).call(zoom.transform,d3.zoomIdentity);
+$('#play').onclick=function(){
+  if(UI.play){ stopPlay(); return; }
+  this.setAttribute('aria-pressed','true'); this.textContent='Stop';
+  let y=ASSESS_FROM; const keep=[F.t0,F.t1];
+  const step=()=>{ if(y>Math.floor(MAX_YM/12)){ stopPlay(); F.t0=keep[0]; F.t1=keep[1]; update(); return; } F.t0=y*12; F.t1=y*12+11; update(); y++; };
+  step(); UI.play=setInterval(step,1300);
+};
+function stopPlay(){ clearInterval(UI.play); UI.play=null; const b=$('#play'); b.setAttribute('aria-pressed','false'); b.textContent='Play by year'; }
+
+/* ---------- timeline ---------- */
+let tlKey='';
+const REASON_ORDER=[0,1,2,3];
+function renderTimeline(){
+  const host=$('#tl'), W=Math.max(320,host.clientWidth-2); if(!host.clientWidth) return;
+  const key=[W,UI.tlMetric,[...UI.lines].join(),isDark(),Object.keys(F.sets).map(k=>[...F.sets[k]].join()).join('|')].join('~');
+  if(key===tlKey){ paintBrush(); return; }
+  tlKey=key;
+  const rows=sel(null,true), mCount=MAX_YM-MIN_YM+1, P=pal(), narrow=W<640, paper=css('--panel');
+  const m={l:42,r:narrow?44:106,t:26,b:24}, iw=W-m.l-m.r, h1=narrow?120:150, gap=40, h2=narrow?140:170, H=m.t+h1+gap+h2+m.b;
+  const x=d3.scaleLinear().domain([MIN_YM,MAX_YM+1]).range([0,iw]);
+  // hatch / dot textures so reasons differ without colour
+  const defs=P.reason.map((c,ri)=>{
+    let inner=`<rect width="5" height="5" fill="${c}"/>`;
+    if(ri===1) inner+=`<path d="M-1,6 L6,-1" stroke="${paper}" stroke-width="1.4"/>`;
+    if(ri===2) inner+=`<circle cx="2.5" cy="2.5" r="1.05" fill="${paper}"/>`;
+    if(ri===3) inner+=`<path d="M-1,6 L6,-1 M-1,-1 L6,6" stroke="${paper}" stroke-width="1"/>`;
+    return `<pattern id="pt${ri}" width="5" height="5" patternUnits="userSpaceOnUse">${inner}</pattern>`;
+  }).join('');
+  const val=r=>UI.tlMetric==='st'?r.st:UI.tlMetric==='ap'?r.ap:1;
+  const bins=Array.from({length:mCount},()=>[0,0,0,0]);
+  rows.forEach(r=>{ bins[r.ym-MIN_YM][r.r]+=val(r); });
+  const tot=bins.map(b=>b[0]+b[1]+b[2]+b[3]);
+  const bw=Math.max(1,iw/mCount-1);
+  // streamgraph: stream thickness is the 5-month smoothed monthly total, centred on a midline
+  const sm=bins.map((b,i)=>{ const win=bins.slice(Math.max(0,i-2),i+3); return {0:d3.mean(win,a=>a[0]),1:d3.mean(win,a=>a[1]),2:d3.mean(win,a=>a[2]),3:d3.mean(win,a=>a[3])}; });
+  const layers=d3.stack().keys([0,1,2,3]).offset(d3.stackOffsetSilhouette).order(d3.stackOrderInsideOut)(sm);
+  let lo=Infinity,hi=-Infinity; layers.forEach(L=>L.forEach(p=>{ lo=Math.min(lo,p[0]); hi=Math.max(hi,p[1]); }));
+  if(!isFinite(lo)||hi<=lo){ lo=-1; hi=1; }
+  const pad=(hi-lo)*.06, y1=d3.scaleLinear().domain([lo-pad,hi+pad]).range([h1,0]);
+  const sarea=d3.area().curve(d3.curveBasis).x((d,i)=>x(MIN_YM+i)+bw/2).y0(d=>y1(d[0])).y1(d=>y1(d[1]));
+  let g=`<defs>${defs}</defs><g transform="translate(${m.l},${m.t})">`;
+  g+=`<line x1="0" x2="${iw}" y1="${y1(0)}" y2="${y1(0)}" stroke="var(--grid)" stroke-dasharray="1 5" stroke-linecap="round" stroke-width="1.5"/>`;
+  layers.forEach(L=>{ g+=`<path d="${sarea(L)}" fill="url(#pt${L.key})" stroke="var(--ink)" stroke-width=".7" stroke-opacity=".75" stroke-linejoin="round"/>`; });
+  const tk=d3.ticks(0,d3.max(sm,a=>d3.sum(Object.values(a)))||1,3).filter(v=>v>0).pop();
+  if(tk){ const bh=Math.abs(y1(tk)-y1(0)), by0=h1/2-bh/2; g+=`<path d="M-12,${by0} h5 v${bh} h-5" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="-16" y="${by0+bh/2+3.5}" text-anchor="end" fill="var(--ink2)" font-size="10.5" font-family="var(--f-mono)">${d3.format('~s')(tk)}</text>`; }
+  const y0=Math.floor(MIN_YM/12), years=d3.range(y0,Math.floor(MAX_YM/12)+1).filter(yy=>(yy-y0)%2===0);
+  g+=`<line x1="0" x2="${iw}" y1="${h1}" y2="${h1}" stroke="var(--ink)" stroke-width="1.5"/>`;
+  let lx=0; D.reasons.forEach((rn,ri)=>{ g+=`<rect x="${lx}" y="-20" width="11" height="11" fill="url(#pt${ri})" stroke="var(--ink)" stroke-width="1"/><text x="${lx+17}" y="-10.5" fill="var(--ink)" font-size="11" font-family="var(--f-body)">${rn}</text>`; lx+=rn.length*6.2+36; });
+  const g2=h1+gap; g+=`<g transform="translate(0,${g2})">`;
+  const ass=Array(mCount).fill(0), cnt=[...Array(9)].map(()=>Array(mCount).fill(0));
+  rows.forEach(r=>{ if(!r.as) return; const i=r.ym-MIN_YM; ass[i]++; for(let k=0;k<9;k++) if((r.nd>>k)&1) cnt[k][i]++; });
+  const series=[...UI.lines].sort((a,b)=>a-b).map(k=>{
+    const pts=[]; for(let i=0;i<mCount;i++){ if(MIN_YM+i<ASSESS_FROM*12) continue; let a=0,c=0; for(let j=Math.max(0,i-11);j<=i;j++){a+=ass[j];c+=cnt[k][j];} pts.push(a>=10?{i,v:c/a}:{i,v:null}); }
+    return {k,pts};
+  });
+  const ymax=Math.min(1,Math.max(.4,Math.ceil((d3.max(series,s=>d3.max(s.pts,p=>p.v))||.4)*5)/5));
+  const y2=d3.scaleLinear().domain([0,ymax]).range([h2,0]);
+  const pre=x(ASSESS_FROM*12);
+  g+=`<rect x="0" y="0" width="${Math.max(0,pre)}" height="${h2}" fill="var(--panel2)"/><text x="${Math.max(0,pre)-6}" y="14" text-anchor="end" fill="var(--mute)" font-size="10.5" font-family="var(--f-mono)">needs not recorded</text>`;
+  y2.ticks(4).forEach(t=>{ g+=`<line x1="0" x2="${iw}" y1="${y2(t)}" y2="${y2(t)}" stroke="var(--grid)" stroke-dasharray="1 4" stroke-linecap="round" stroke-width="1.5"/><text x="-8" y="${y2(t)+3.5}" text-anchor="end" fill="var(--mute)" font-size="10.5" font-family="var(--f-mono)">${p0(t)}</text>`; });
+  const line=d3.line().curve(d3.curveMonotoneX).defined(d=>d.v!=null).x(d=>x(MIN_YM+d.i)+bw/2).y(d=>y2(d.v));
+  const DASH={0:'',1:'9 4',2:'1 5',4:'12 3 2 3',5:'20 4'}, TAG={0:'Psychosocial',1:'Health',2:'Water',4:'Shelter',5:'Livelihood'};
+  const ends=[];
+  series.forEach(s=>{ const col=P.need[s.k], d=line(s.pts)||'';
+    g+=`<path d="${d}" fill="none" stroke="var(--ink)" stroke-width="5.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="${DASH[s.k]||''}" opacity=".9" transform="translate(1.6,1.4)"/>`;
+    g+=`<path d="${d}" fill="none" stroke="${col}" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="${DASH[s.k]||''}"/>`;
+    const last=[...s.pts].reverse().find(p=>p.v!=null); if(last) ends.push({k:s.k,y:y2(last.v),ty:y2(last.v),x:x(MIN_YM+last.i)+bw/2,col}); });
+  ends.sort((a,b)=>a.ty-b.ty); for(let i=1;i<ends.length;i++) if(ends[i].ty-ends[i-1].ty<22) ends[i].ty=ends[i-1].ty+22;
+  ends.forEach(e=>{ const nm=narrow?NEED_CODE[e.k]:TAG[e.k], tw=nm.length*(narrow?7.6:7)+12;
+    g+=`<circle cx="${e.x}" cy="${e.y}" r="4.5" fill="${e.col}" stroke="var(--ink)" stroke-width="1.6"/><g transform="translate(${iw+10},${e.ty-9})"><rect width="${tw}" height="18" rx="2" fill="${e.col}" stroke="var(--ink)" stroke-width="1.4"/><text x="6" y="12.6" fill="${onColor(e.col)}" font-size="10.5" font-weight="700" font-family="var(--f-mono)">${nm}</text></g>`; });
+  g+=`<line x1="0" x2="${iw}" y1="${h2}" y2="${h2}" stroke="var(--ink)" stroke-width="1.5"/>`;
+  years.forEach(yr=>{ const xx=x(yr*12); g+=`<line x1="${xx}" x2="${xx}" y1="${h2}" y2="${h2+5}" stroke="var(--ink)" stroke-width="1.5"/><text x="${xx}" y="${h2+17}" text-anchor="middle" fill="var(--ink2)" font-size="10.5" font-family="var(--f-mono)">${yr}</text>`; });
+  g+='</g>';
+  g+=`<g id="brushg"></g><line id="cross" y1="0" y2="${h1+gap+h2}" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3 3" style="display:none"/>`;
+  g+='</g>';
+  host.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Monthly demolitions by reason and rolling need rates">${g}</svg>`;
+  const svg=d3.select(host).select('svg'), root=svg.select('g:nth-of-type(1)');
+  const rootSel=svg.selectAll('g').filter(function(){return this.parentNode===svg.node() && this.getAttribute('transform');}).nodes()[0];
+  const rt=d3.select(rootSel);
+  TL.x=x; TL.iw=iw; TL.h=h1+gap+h2; TL.root=rt;
+  const brush=d3.brushX().extent([[0,0],[iw,h1+gap+h2]]).on('end',e=>{
+    if(!e.sourceEvent) return;
+    if(!e.selection){ F.t0=MIN_YM; F.t1=MAX_YM; }
+    else { F.t0=Math.max(MIN_YM,Math.round(x.invert(e.selection[0]))); F.t1=Math.min(MAX_YM,Math.max(F.t0,Math.round(x.invert(e.selection[1]))-1)); }
+    update();
+  });
+  TL.brush=brush; TL.gb=rt.select('#brushg').call(brush);
+  TL.gb.select('.selection').attr('fill','var(--pink)').attr('fill-opacity',.2).attr('stroke','var(--ink)').attr('stroke-width',1.5).attr('stroke-dasharray','4 3');
+  TL.gb.on('dblclick',()=>{ F.t0=MIN_YM; F.t1=MAX_YM; update(); });
+  svg.on('mousemove',e=>{
+    const [px,py]=d3.pointer(e,rt.node()); if(px<0||px>iw||py<0||py>TL.h){ hideTip(); rt.select('#cross').style('display','none'); return; }
+    const i=Math.max(0,Math.min(mCount-1,Math.floor(x.invert(px)-MIN_YM))), ym=MIN_YM+i;
+    rt.select('#cross').style('display',null).attr('x1',x(ym)+bw/2).attr('x2',x(ym)+bw/2);
+    const b=bins[i]; let html=`<div class="t">${mon(ym)}</div><div class="m"><span class="k">${fmt(tot[i])}</span> ${UI.tlMetric==='st'?'structures':UI.tlMetric==='ap'?'people affected':'incidents'}</div>`;
+    D.reasons.forEach((rn,ri)=>{ if(b[ri]) html+=`<div class="m">${rn}: <span class="k">${fmt(b[ri])}</span></div>`; });
+    if(ym>=ASSESS_FROM*12){ html+=`<div class="m" style="margin-top:4px">12-month rolling need rate</div>`; series.forEach(s=>{ const p=s.pts[ym-ASSESS_FROM*12]; html+=`<div class="m">${NEED_SHORT[s.k]}: <span class="k">${p&&p.v!=null?p0(p.v):'n/a'}</span></div>`; }); }
+    showTip(html,e.clientX,e.clientY);
+  }).on('mouseleave',()=>{hideTip(); rt.select('#cross').style('display','none');});
+  paintBrush();
+}
+const TL={};
+function paintBrush(){
+  if(!TL.gb) return; const full=F.t0<=MIN_YM&&F.t1>=MAX_YM;
+  TL.gb.call(TL.brush.move, full?null:[TL.x(F.t0),TL.x(F.t1+1)]);
+}
+
+/* ---------- lenses, outcomes and group helpers ---------- */
+const OUT=[
+  {k:'ps',lab:'Psychosocial support',short:'Psychosocial',f:r=>r.nd&1},
+  {k:'wa',lab:'Water, sanitation & hygiene',short:'Water & sanitation',f:r=>(r.nd>>2)&1},
+  {k:'lv',lab:'Livelihood support',short:'Livelihood',f:r=>(r.nd>>5)&1},
+  {k:'hl',lab:'Health care',short:'Health care',f:r=>(r.nd>>1)&1}
+];
+const OUTI=Object.fromEntries(OUT.map(o=>[o.k,o]));
+function wilson(k,n){ if(!n) return [0,0,0]; const z=1.96, ph=k/n, d=1+z*z/n, c=(ph+z*z/(2*n))/d, h=z*Math.sqrt(ph*(1-ph)/n+z*z/(4*n*n))/d; return [ph,Math.max(0,c-h),Math.min(1,c+h)]; }
+const rates3=rows=>{ let b=0,m=0,l=0; for(const r of rows){ if(r.nd&6) b++; if(r.nd&1) m++; if((r.nd>>5)&1) l++; } const n=rows.length||1; return [b/n,m/n,l/n]; };
+const share3=v=>{ const s=v[0]+v[1]+v[2]; return s>0?[v[0]/s,v[1]/s,v[2]/s]:[1/3,1/3,1/3]; };
+const BASE3=rates3(R.filter(r=>r.as));
+function groupsOf(dim,rows,minN){ const Dm=DIMS[dim]; return Dm.labels.map((lab,k)=>({k,lab,rows:rows.filter(r=>Dm.test(r,k))})).filter(g=>g.rows.length>=minN); }
+function shortLab(l,max){ l=String(l).replace('More people affected (per doubling)','More people (per doubling)').replace('Jerusalem governorate (outside East Jerusalem)','Jerusalem gov. (outside E. Jerusalem)').replace('Interior ministry, nature authority or forces','Interior ministry, INPA or forces')
+  .replace('Repeat demolitions in locality, prior 2 years (per doubling)','Repeat cases (per doubling)').replace('Israeli Civil Administration','Civil Administration'); max=max||99; return l.length>max?l.slice(0,max-1)+'…':l; }
+const GROUP_DIMS=['reason','actor','type','ref','cls','place','struct','disp','area'];
+function fillSelect(id,keys,cur){ $(id).innerHTML=keys.map(k=>`<option value="${k}"${k===cur?' selected':''}>${DIMS[k].label}</option>`).join(''); }
+function laneHost(id){ const h=$(id); return (h&&h.clientWidth)?h:null; }
+
+/* ---------- the shape of harm: a ternary of body, mind and land ---------- */
+function renderTernary(){
+  const host=laneHost('#tern'); if(!host) return;
+  const W=Math.max(300,host.clientWidth), P=pal(), dim=UI.ternDim;
+  const base=sel(dim).filter(r=>r.as), groups=groupsOf(dim,base,8);
+  if(!groups.length){ host.innerHTML='<div class="empty">No group in this selection has 8 or more assessed incidents.</div>'; $('#ternRead').innerHTML=''; return; }
+  const L=Math.min(W-70,540), th=L*0.866, top=46, H=top+th+70, cx=W/2;
+  const Vm=[cx,top], Vb=[cx-L/2,top+th], Vl=[cx+L/2,top+th];
+  const pt=s=>[s[0]*Vb[0]+s[1]*Vm[0]+s[2]*Vl[0], s[0]*Vb[1]+s[1]*Vm[1]+s[2]*Vl[1]];
+  let g=`<path d="M${Vm}L${Vb}L${Vl}Z" fill="var(--panel2)" stroke="var(--edge)" stroke-width="2" stroke-linejoin="round"/>`;
+  const ln=(a,b)=>`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="var(--grid)" stroke-dasharray="1 5" stroke-linecap="round" stroke-width="1.7"/>`;
+  for(const f of [.2,.4,.6,.8]){ g+=ln(pt([f,1-f,0]),pt([f,0,1-f]))+ln(pt([1-f,f,0]),pt([0,f,1-f]))+ln(pt([1-f,0,f]),pt([0,1-f,f])); }
+  const cl=P.lens;
+  g+=`<text class="hd" x="${cx}" y="${top-24}" text-anchor="middle" style="fill:${cl.mind}">Mind</text><text class="sm" x="${cx}" y="${top-11}" text-anchor="middle">psychosocial support</text>`;
+  g+=`<text class="hd" x="${Vb[0]}" y="${Vb[1]+22}" text-anchor="start" style="fill:${cl.body}">Body</text><text class="sm" x="${Vb[0]}" y="${Vb[1]+35}" text-anchor="start">health care, water &amp; sanitation</text>`;
+  g+=`<text class="hd" x="${Vl[0]}" y="${Vl[1]+22}" text-anchor="end" style="fill:${cl.land}">Land</text><text class="sm" x="${Vl[0]}" y="${Vl[1]+35}" text-anchor="end">livelihood</text>`;
+  const maxN=d3.max(groups,x=>x.rows.length), rad=d3.scaleSqrt().domain([0,maxN]).range([5,Math.min(26,L/16)]);
+  groups.forEach(gp=>{
+    const rt=rates3(gp.rows), sh=share3(rt); gp.rt=rt; gp.sh=sh; gp.xy=pt(sh); gp.r=rad(gp.rows.length);
+    gp.mean=(rt[0]+rt[1]+rt[2])/3; gp.col=needRamp(Math.min(1,gp.mean/0.7));
+    const rnd=d3.randomLcg(7919+gp.k*131), n=gp.rows.length, dust=[];
+    for(let b=0;b<60;b++){ let x=0,y=0,z=0; for(let i=0;i<n;i++){ const r=gp.rows[Math.floor(rnd()*n)]; if(r.nd&6) x++; if(r.nd&1) y++; if((r.nd>>5)&1) z++; } const q=pt(share3([x/n,y/n,z/n])); dust.push(q); }
+    gp.dust=dust;
+  });
+  const sorted=groups.slice().sort((a,b)=>b.rows.length-a.rows.length), hasSel=F.sets[dim].size>0;
+  sorted.forEach(gp=>{ const dim_=hasSel&&!F.sets[dim].has(gp.k); g+=`<g opacity="${dim_?.3:1}">${gp.dust.map(q=>`<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="1.5" fill="${gp.col}" opacity=".45"/>`).join('')}</g>`; });
+  const allp=pt(share3(rates3(base)));
+  sorted.forEach(gp=>{ const on=F.sets[dim].has(gp.k), dim_=hasSel&&!on;
+    g+=`<g class="blob click" data-k="${gp.k}" opacity="${dim_?.4:1}"><circle cx="${gp.xy[0]}" cy="${gp.xy[1]}" r="${gp.r}" fill="${gp.col}" fill-opacity=".9" stroke="var(--ink)" stroke-width="${on?3:1.5}"/></g>`; });
+  const boxes=[[allp[0]+10,allp[1]-12,26,14]];
+  g+=`<path d="M${allp[0]},${allp[1]-9}L${allp[0]+9},${allp[1]}L${allp[0]},${allp[1]+9}L${allp[0]-9},${allp[1]}Z" fill="var(--panel)" stroke="var(--ink)" stroke-width="2"/><text class="lbl" x="${allp[0]}" y="${allp[1]-14}" text-anchor="middle" style="font-weight:700;paint-order:stroke;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round">all</text>`;
+  sorted.forEach(gp=>{
+    const txt=shortLab(gp.lab,24), w=txt.length*6.1+6, h=14, [x,y]=gp.xy, r=gp.r;
+    for(const c of [[x+r+4,y+4,'start'],[x-r-4,y+4,'end'],[x,y-r-5,'middle'],[x,y+r+13,'middle']]){
+      const bx=c[2]==='start'?c[0]:c[2]==='end'?c[0]-w:c[0]-w/2, by=c[1]-11;
+      if(bx<2||bx+w>W-2||by<2||by+h>H-2) continue;
+      if(boxes.some(o=>bx<o[0]+o[2]&&bx+w>o[0]&&by<o[1]+o[3]&&by+h>o[1])) continue;
+      boxes.push([bx,by,w,h]);
+      g+=`<text class="lbl" x="${c[0]}" y="${c[1]}" text-anchor="${c[2]}" style="paint-order:stroke;stroke:var(--panel2);stroke-width:3.5px;stroke-linejoin:round">${txt}</text>`; break;
+    }
+  });
+  host.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Ternary diagram placing groups of incidents by the split of their flagged needs between body, mind and land">${g}</svg>`;
+  host._g=groups; host._base=base;
+  const top3=(i)=>groups.filter(x=>x.rows.length>=15).sort((a,b)=>b.sh[i]-a.sh[i])[0];
+  const tm=top3(1), tl=top3(2), tb=top3(0);
+  $('#ternRead').innerHTML=[tm&&`Pulled furthest toward the <b>mind</b>: ${shortLab(tm.lab)} (${p0(tm.sh[1])} of its flagged need)`, tl&&`toward the <b>land</b>: ${shortLab(tl.lab)} (${p0(tl.sh[2])})`, tb&&`toward the <b>body</b>: ${shortLab(tb.lab)} (${p0(tb.sh[0])})`].filter(Boolean).join('; ')+'.';
+}
+$('#tern').addEventListener('mousemove',e=>{
+  const b=e.target.closest('.blob'), host=$('#tern'); if(!b||!host._g){ hideTip(); return; }
+  const gp=host._g.find(x=>x.k===+b.dataset.k); if(!gp) return;
+  showTip(`<div class="t">${gp.lab}</div><div class="m"><span class="k">${fmt(gp.rows.length)}</span> assessed incidents</div>
+  <div class="m">Mind <span class="k">${p0(gp.rt[1])}</span> · Body <span class="k">${p0(gp.rt[0])}</span> · Land <span class="k">${p0(gp.rt[2])}</span></div>
+  <div class="m">Split of flagged need: mind ${p0(gp.sh[1])}, body ${p0(gp.sh[0])}, land ${p0(gp.sh[2])}</div>
+  <div class="m" style="color:var(--mute)">The dust shows how far this spot moves if the incidents are resampled. Click to filter.</div>`,e.clientX,e.clientY);
+});
+$('#tern').addEventListener('mouseleave',hideTip);
+$('#tern').addEventListener('click',e=>{ const b=e.target.closest('.blob'); if(b) toggle(UI.ternDim,+b.dataset.k); });
+
+/* ---------- the web of need: which needs travel together ---------- */
+const WEB_ORDER=[1,2,3,0,4,5,6,7,8], WEB_LENS=['body','body','body','mind','other','land','other','other','other'];
+function renderWeb(){
+  const host=laneHost('#web'); if(!host) return;
+  const rows=sel().filter(r=>r.as), n=rows.length, W=Math.max(300,host.clientWidth), P=pal();
+  if(n<40){ host.innerHTML='<div class="empty">Fewer than 40 assessed incidents in this selection.</div>'; $('#webRead').innerHTML=''; return; }
+  const K=9, c=new Array(K).fill(0), cc=Array.from({length:K},()=>new Array(K).fill(0));
+  for(const r of rows) for(let i=0;i<K;i++) if((r.nd>>i)&1){ c[i]++; for(let j=i+1;j<K;j++) if((r.nd>>j)&1) cc[i][j]++; }
+  const edges=[];
+  for(let i=0;i<K;i++) for(let j=i+1;j<K;j++){
+    const a=c[i], b=c[j], den=Math.sqrt(a*(n-a)*b*(n-b)); if(!den) continue;
+    const phi=(n*cc[i][j]-a*b)/den, chi=n*phi*phi;
+    if(Math.abs(phi)>=0.08 && chi>=6.63) edges.push({i,j,phi,joint:cc[i][j]/n,exp:a*b/n/n});
+  }
+  const narrow=W<520, R_=narrow?Math.max(70,W/2-78):Math.min(W/2-96,190), H=2*R_+150, cx=W/2, cy=R_+72;
+  const ang=p=>-Math.PI/2+2*Math.PI*(p+.5)/K, pos={};
+  WEB_ORDER.forEach((k,p)=>{ const a=ang(p); pos[k]={a,x:cx+R_*Math.cos(a),y:cy+R_*Math.sin(a),r:5+17*Math.sqrt(c[k]/n)}; });
+  let g=`<circle cx="${cx}" cy="${cy}" r="${R_}" fill="none" stroke="var(--grid)" stroke-width="1.6" stroke-dasharray="1 5" stroke-linecap="round"/>`;
+  const mx=d3.max(edges,e=>Math.abs(e.phi))||.3;
+  edges.sort((a,b)=>Math.abs(a.phi)-Math.abs(b.phi)).forEach((e,idx)=>{
+    const a=pos[e.i], b=pos[e.j], mxp=(a.x+b.x)/2, myp=(a.y+b.y)/2, qx=cx+(mxp-cx)*.18, qy=cy+(myp-cy)*.18, w=1.4+15*Math.abs(e.phi);
+    const col=e.phi>0?P.need[0]:P.need[2];
+    g+=`<path class="edge" data-e="${idx}" d="M${a.x},${a.y}Q${qx},${qy} ${b.x},${b.y}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" ${e.phi<0?'stroke-dasharray="2 7"':''} opacity="${e.phi>0?.62:.9}"/>`;
+    e.idx=idx;
+  });
+  WEB_ORDER.forEach((k,p)=>{
+    const o=pos[k], lens=WEB_LENS[p], col=P.lens[lens], lx=cx+(R_+o.r+12)*Math.cos(o.a), ly=cy+(R_+o.r+12)*Math.sin(o.a), cosA=Math.cos(o.a);
+    const anchor=Math.abs(cosA)<.3?'middle':(cosA>0?'start':'end'), dy=Math.sin(o.a)>.5?10:(Math.sin(o.a)<-.5?-4:4);
+    g+=`<circle cx="${o.x}" cy="${o.y}" r="${o.r}" fill="${col}" stroke="var(--ink)" stroke-width="1.6"/>`;
+    g+=`<text class="lbl" x="${lx}" y="${ly+dy}" text-anchor="${anchor}" style="font-weight:600">${narrow&&NEED_SHORT[k].length>12?NEED_SHORT[k].split(' ')[0]:NEED_SHORT[k]}</text><text class="sm" x="${lx}" y="${ly+dy+12}" text-anchor="${anchor}">${p0(c[k]/n)}${narrow?'':' of incidents'}</text>`;
+  });
+  host.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Web of needs: arcs join needs that are flagged together more or less often than chance">${g}</svg>`;
+  host._edges=edges; host._c=c; host._n=n;
+  const pos_=edges.filter(e=>e.phi>0).sort((a,b)=>b.phi-a.phi)[0], neg_=edges.filter(e=>e.phi<0).sort((a,b)=>a.phi-b.phi)[0];
+  $('#webRead').innerHTML=[pos_&&`Most often together: <b>${NEED_SHORT[pos_.i]}</b> and <b>${NEED_SHORT[pos_.j]}</b> (φ ${pos_.phi.toFixed(2)})`,neg_&&`Most often apart: <b>${NEED_SHORT[neg_.i]}</b> and <b>${NEED_SHORT[neg_.j]}</b> (φ ${neg_.phi.toFixed(2)})`].filter(Boolean).join('. ')+'.';
+}
+$('#web').addEventListener('mousemove',e=>{
+  const p=e.target.closest('.edge'), host=$('#web'); if(!p||!host._edges){ hideTip(); return; }
+  const ed=host._edges.find(x=>x.idx===+p.dataset.e); if(!ed) return;
+  showTip(`<div class="t">${NEED_SHORT[ed.i]} &amp; ${NEED_SHORT[ed.j]}</div><div class="m">${ed.phi>0?'Flagged together more often than chance':'Flagged together less often than chance'} (φ <span class="k">${ed.phi.toFixed(2)}</span>)</div><div class="m">Both flagged in <span class="k">${p1(ed.joint)}</span> of incidents; chance alone would give <span class="k">${p1(ed.exp)}</span>.</div>`,e.clientX,e.clientY);
+});
+$('#web').addEventListener('mouseleave',hideTip);
+
+/* ---------- drivers: adjusted odds ratios from the model ---------- */
+const DRV_COLS=[['reason','who','type','lost','people'],['scale','settle','area','gov']];
+function termFilter(t){
+  const v=t.k;
+  if(t.g==='reason') return [['reason',D.reasons.indexOf(v.split('=')[1])]];
+  if(t.g==='type') return [['type',D.types.indexOf(v.split('=')[1])]];
+  if(t.g==='who') return ({by_ICA:[['actor',0]],by_JM:[['actor',1]],by_State:[['actor',2],['actor',3],['actor',4]],by_Self:[['actor',6]],by_Other:[['actor',7],['actor',5]]})[v]||null;
+  if(t.g==='lost') return [['struct',({s_home:0,s_empty:1,s_agri:2,s_wash:3,s_infra:4,s_live:5,s_other:6})[v]]];
+  if(t.g==='people') return v==='displaced'?[['disp',0]]:[['ref',D.refs.indexOf(v.split('=')[1])]];
+  if(t.g==='settle') return [['cls',D.clss.indexOf(v.split('=')[1])]];
+  if(t.g==='area') return [['area',D.areas.indexOf(v.split('=')[1])]];
+  if(t.g==='gov') return [['place',D.places.indexOf(t.l)]];
+  return null;
+}
+function applyPairs(pairs){
+  const all=pairs.every(p=>F.sets[p[0]].has(p[1]));
+  pairs.forEach(p=>{ if(all) F.sets[p[0]].delete(p[1]); else F.sets[p[0]].add(p[1]); });
+  UI.page=1; update();
+}
+function statsMsg(){
+  if(D.statsError) return '<div class="empty">The statistical model could not be fitted: '+D.statsError+'</div>';
+  return '<div class="empty">Fitting the statistical model in your browser'+(D.fitPct!=null?' ('+Math.round(D.fitPct*100)+'%)':'')+'. This takes a few seconds.</div>';
+}
+window.__statsStep=function(){ ['#drv','#strata'].forEach(s=>{ const h=$(s); if(h&&!D.stats&&h.querySelector('.empty')) h.innerHTML=statsMsg(); }); };
+window.__statsReady=function(){ run(); };
+window.__ATLAS=D;
+function renderDrivers(){
+  const host=laneHost('#drv'); if(!host) return;
+  const S=D.stats; if(!S||!S.outcomes){ host.innerHTML=statsMsg(); return; }
+  const oc=S.outcomes[UI.outcome], W=Math.max(300,host.clientWidth), cols=W>=860?2:1, P=pal();
+  $('#drvfit').innerHTML=`<b>${OUTI[UI.outcome].lab}</b>: ${fmt(oc.events)} of ${fmt(S.n)} assessed incidents flagged it. The model separates flagged from not flagged with an accuracy (cross-validated AUC) of <b>${oc.auc.toFixed(2)}</b>${oc.events<150?'. Few incidents flagged this need, so every estimate is pulled toward no effect and the intervals are wide':''}.`;
+  const colGroups=cols===2?DRV_COLS:[DRV_COLS[0].concat(DRV_COLS[1])];
+  const gap=34, cw=(W-gap*(cols-1))/cols, labelW=Math.min(240,cw*.5), x0=labelW+10, x1=cw-14, rowH=22, headH=30;
+  const xs=d3.scaleLog().domain([.1,40]).range([x0,x1]).clamp(true), cl=v=>Math.max(.1,Math.min(40,v));
+  const byG={}; oc.terms.forEach(t=>{ (byG[t.g]=byG[t.g]||[]).push(t); });
+  const more=css('--need1'), less=css('--lo'), mute=css('--mute');
+  const ticks=[.125,.25,.5,1,2,4,8,16,32];
+  const all=[]; let g='', Hmax=0;
+  colGroups.forEach((groups,ci)=>{
+    let y=26; const ox=ci*(cw+gap); let gs=`<g transform="translate(${ox},0)">`;
+    const startY=y, rowsY=[];
+    groups.forEach(gk=>{
+      const ts=byG[gk]; if(!ts) return;
+      gs+=`<text class="hd" x="0" y="${y+headH-12}">${S.titles[gk]||gk}</text><line x1="0" x2="${cw}" y1="${y+headH-6}" y2="${y+headH-6}" stroke="var(--edge)" stroke-width="1.2"/>`;
+      y+=headH;
+      ts.forEach(t=>{
+        const cy=y+rowH/2, sig=t.lo>1?'more':(t.hi<1?'less':'none'), colr=sig==='more'?more:(sig==='less'?less:mute), id=all.length; all.push(t);
+        t._y=cy;
+        gs+=`<g class="frow click" data-i="${id}"><rect x="0" y="${y}" width="${cw}" height="${rowH}" fill="transparent"/>`;
+        gs+=`<text class="lbl" x="0" y="${cy+4}" style="font-weight:${sig==='none'?400:700}">${shortLab(t.l,Math.floor((labelW-40)/6.3))}</text>`;
+        gs+=`<text class="sm" x="${labelW}" y="${cy+4}" text-anchor="end">${t.n>=1000?d3.format(',')(t.n):t.n}</text>`;
+        gs+=`<line x1="${xs(cl(t.lo))}" x2="${xs(cl(t.hi))}" y1="${cy}" y2="${cy}" stroke="${colr}" stroke-width="5" stroke-linecap="round" opacity=".5"/>`;
+        gs+=`<line x1="${xs(cl(t.orr))}" x2="${xs(cl(t.or))}" y1="${cy}" y2="${cy}" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="1.5 3"/>`;
+        gs+=`<circle cx="${xs(cl(t.orr))}" cy="${cy}" r="3.6" fill="var(--panel)" stroke="var(--ink)" stroke-width="1.4"/>`;
+        gs+=`<circle cx="${xs(cl(t.or))}" cy="${cy}" r="5" fill="${colr}" stroke="var(--ink)" stroke-width="1.5"/>`;
+        if(t.hi>40) gs+=`<path d="M${x1+1},${cy-4}L${x1+6},${cy}L${x1+1},${cy+4}Z" fill="${colr}"/>`;
+        gs+='</g>';
+        y+=rowH;
+      });
+      y+=10;
+    });
+    // gridlines and axis behind rows
+    let ax='';
+    ticks.forEach(tk=>{ ax+=`<line x1="${xs(tk)}" x2="${xs(tk)}" y1="${startY}" y2="${y}" stroke="${tk===1?'var(--ink)':'var(--grid)'}" stroke-width="${tk===1?1.6:1}" ${tk===1?'':'stroke-dasharray="1 4"'}/><text class="sm" x="${xs(tk)}" y="${y+13}" text-anchor="middle">${tk<1?(tk===.5?'½':tk===.25?'¼':'⅛'):tk}</text>`; });
+    ax+=`<text class="sm" x="${xs(1)}" y="${y+28}" text-anchor="middle" style="fill:var(--ink2)">← fewer flagged · odds vs reference · more flagged →</text>`;
+    gs=gs.replace(`<g transform="translate(${ox},0)">`,`<g transform="translate(${ox},0)">${ax}`)+'</g>';
+    g+=gs; Hmax=Math.max(Hmax,y+36);
+  });
+  host.innerHTML=`<svg viewBox="0 0 ${W} ${Hmax}" width="${W}" height="${Hmax}" role="img" aria-label="Adjusted odds ratios for each factor, for ${OUTI[UI.outcome].lab}">${g}</svg>`;
+  host._terms=all;
+}
+$('#drv').addEventListener('mousemove',e=>{
+  const r=e.target.closest('.frow'), host=$('#drv'); if(!r||!host._terms){ hideTip(); return; }
+  const t=host._terms[+r.dataset.i]; if(!t) return;
+  const f=n=>n>=100?Math.round(n):(n>=10?n.toFixed(1):n.toFixed(2)), rt=t.rate;
+  showTip(`<div class="t">${t.l}</div><div class="m"><span class="k">${fmt(t.n)}</span> assessed incidents${rt?`, <span class="k">${p0(rt[0])}</span> flagged (95% range ${p0(rt[1])}–${p0(rt[2])})`:''}</div>
+  <div class="m">Adjusted odds ×<span class="k">${f(t.or)}</span> (95% interval ${f(t.lo)}–${f(t.hi)})${t.p<.001?', p&lt;0.001':', p='+t.p.toFixed(3)}</div>
+  <div class="m">Unadjusted odds ×<span class="k">${f(t.orr)}</span></div>
+  ${termFilter(t)?'<div class="m" style="color:var(--mute)">Click to filter everything to this group</div>':''}`,e.clientX,e.clientY);
+});
+$('#drv').addEventListener('mouseleave',hideTip);
+$('#drv').addEventListener('click',e=>{ const r=e.target.closest('.frow'), host=$('#drv'); if(!r||!host._terms) return; const f=termFilter(host._terms[+r.dataset.i]); if(f) applyPairs(f); });
+
+/* ---------- strata: what explains whether a need was flagged ---------- */
+const STRATA_ORDER=['time','place','event','loss','people','repeat'];
+function renderStrata(){
+  const host=laneHost('#strata'); if(!host) return;
+  const S=D.stats; if(!S||!S.outcomes){ host.innerHTML=statsMsg(); return; }
+  const W=Math.max(300,host.clientWidth), P=pal(), left=40, top=44, ph=300, H=top+ph+14, cw=(W-left-8)/4, bw=Math.min(112,cw*.7);
+  const y=v=>top+ph*(1-v);
+  let g=`<defs><pattern id="hatchS" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="var(--panel)"/><path d="M-1,7L7,-1" stroke="var(--ink)" stroke-width="1" opacity=".55"/></pattern></defs>`;
+  [0,.25,.5,.75,1].forEach(t=>{ g+=`<line x1="${left-4}" x2="${W-6}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)" stroke-dasharray="1 4" stroke-width="1.4"/><text class="sm" x="${left-8}" y="${y(t)+3.5}" text-anchor="end">${Math.round(t*100)}%</text>`; });
+  const cells=[];
+  OUT.forEach((o,i)=>{
+    const m=S.outcomes[o.k], x=left+cw*i+(cw-bw)/2; let acc=0;
+    const layers=STRATA_ORDER.map(b=>({b,v:m.partition[b].unique,alone:m.partition[b].alone,col:P.strata[b],name:S.blocks[b]}));
+    layers.push({b:'shared',v:m.shared,col:'url(#hatchS)',name:'Shared between factor groups'});
+    layers.push({b:'none',v:Math.max(0,1-m.r2),col:'var(--panel)',name:'Not explained by anything in the data'});
+    // normalise so the stack always fills the column
+    const tot=d3.sum(layers,l=>l.v)||1;
+    layers.forEach(l=>{ l.v=l.v/tot; });
+    layers.forEach(l=>{
+      const y0=y(acc), y1=y(acc+l.v), hh=Math.max(0,y0-y1); acc+=l.v;
+      const id=cells.length; cells.push({o,m,l});
+      g+=`<g class="cell" data-i="${id}"><rect x="${x}" y="${y1}" width="${bw}" height="${hh}" fill="${l.col}" stroke="var(--ink)" stroke-width="${l.b==='none'?1:1.2}" ${l.b==='none'?'stroke-dasharray="3 3"':''}/>`;
+      if(hh>=15 && l.b!=='shared') g+=`<text class="sm" x="${x+bw/2}" y="${(y0+y1)/2+3.5}" text-anchor="middle" style="fill:${l.b==='none'?'var(--mute)':onColor(l.col)};font-weight:700">${l.v>=.995?'100':(l.v*100).toFixed(l.v<.1?1:0)}%</text>`;
+      g+='</g>';
+    });
+    g+=`<text class="hd" x="${x+bw/2}" y="${top-24}" text-anchor="middle" style="fill:${P.out[o.k]}">${cw<150?({ps:'Mind',wa:'Water',lv:'Land',hl:'Health'}[o.k]||o.short):o.short}</text><text class="sm" x="${x+bw/2}" y="${top-10}" text-anchor="middle">explains ${p0(m.r2)}</text>`;
+  });
+  host.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Stacked columns showing how much of the variation in each need is explained by year, place, the event, what was lost, the people and repetition">${g}</svg>`;
+  host._cells=cells;
+  const items=STRATA_ORDER.slice().reverse().map(b=>({n:S.blocks[b],c:P.strata[b]})); items.unshift({n:'Shared',c:'url(#hatchS)',h:1},{n:'Unexplained',c:'var(--panel)',d:1});
+  $('#strataLegend').innerHTML=items.map(it=>`<span><i style="background:${it.h?'repeating-linear-gradient(135deg,var(--ink) 0 1px,var(--panel) 1px 5px)':it.c};${it.d?'border-style:dashed':''}"></i>${it.n}</span>`).join('');
+}
+$('#strata').addEventListener('mousemove',e=>{
+  const c=e.target.closest('.cell'), host=$('#strata'); if(!c||!host._cells){ hideTip(); return; }
+  const {o,m,l}=host._cells[+c.dataset.i];
+  let body;
+  if(l.b==='shared') body=`<div class="m"><span class="k">${p1(l.v)}</span> of the variation in ${o.lab.toLowerCase()} is explained jointly by overlapping factors and cannot be given to just one group.</div>`;
+  else if(l.b==='none') body=`<div class="m"><span class="k">${p1(l.v)}</span> of the variation is not explained by anything recorded here: the family, the responder, the day.</div>`;
+  else body=`<div class="m">Only this group explains <span class="k">${p1(l.v)}</span> of the variation in ${o.lab.toLowerCase()} being flagged. On its own it would explain <span class="k">${p1(l.alone)}</span>.</div>`;
+  showTip(`<div class="t">${l.name}</div>${body}`,e.clientX,e.clientY);
+});
+$('#strata').addEventListener('mouseleave',hideTip);
+
+/* ---------- funnel: places beyond chance ---------- */
+const FUN_OUT={ps:r=>r.nd&1,wa:r=>(r.nd>>2)&1,lv:r=>(r.nd>>5)&1,hl:r=>(r.nd>>1)&1,any:r=>(r.nd&39)?1:0};
+function renderFunnel(){
+  const host=laneHost('#fun'); if(!host) return;
+  const W=Math.max(300,host.clientWidth), P=pal(), f=FUN_OUT[UI.funOut], rows=sel('loc').filter(r=>r.as);
+  const by=new Map(); rows.forEach(r=>{ let a=by.get(r.l); if(!a){a={l:r.l,n:0,k:0};by.set(r.l,a);} a.n++; a.k+=f(r); });
+  const tot=rows.length, K=d3.sum(rows,r=>f(r)); if(tot<30){ host.innerHTML='<div class="empty">Too few assessed incidents.</div>'; $('#funRead').innerHTML=''; return; }
+  const p0_=K/tot, pts=[...by.values()].filter(a=>a.n>=2), maxN=d3.max(pts,a=>a.n)||10;
+  const H=Math.min(420,Math.max(300,W*.62)), ml=44, mr=16, mt=14, mb=40;
+  const xs=d3.scaleLog().domain([2,maxN*1.15]).range([ml,W-mr]), ys=d3.scaleLinear().domain([0,1]).range([H-mb,mt]);
+  const sd=n=>Math.sqrt(p0_*(1-p0_)/n), ns=d3.range(0,61).map(i=>2*Math.pow(maxN*1.15/2,i/60));
+  const lim=(z,s)=>ns.map(n=>[xs(n),ys(Math.max(0,Math.min(1,p0_+s*z*sd(n))))]);
+  const poly=(z)=>{ const up=lim(z,1), lo=lim(z,-1).reverse(); return 'M'+up.concat(lo).map(p=>p.map(v=>v.toFixed(1)).join(',')).join('L')+'Z'; };
+  let g='';
+  [0,.25,.5,.75,1].forEach(t=>{ g+=`<line x1="${ml}" x2="${W-mr}" y1="${ys(t)}" y2="${ys(t)}" stroke="var(--grid)" stroke-dasharray="1 4" stroke-width="1.4"/><text class="sm" x="${ml-6}" y="${ys(t)+3.5}" text-anchor="end">${Math.round(t*100)}%</text>`; });
+  g+=`<path d="${poly(3.09)}" fill="var(--ink)" opacity=".05"/><path d="${poly(1.96)}" fill="var(--ink)" opacity=".07"/>`;
+  [3.09,1.96].forEach((z,zi)=>{ [1,-1].forEach(s=>{ g+=`<path d="M${lim(z,s).map(p=>p.map(v=>v.toFixed(1)).join(',')).join('L')}" fill="none" stroke="var(--ink)" stroke-width="${zi?1.1:1.6}" ${zi?'stroke-dasharray="4 3"':''} opacity=".7"/>`; }); });
+  g+=`<line x1="${ml}" x2="${W-mr}" y1="${ys(p0_)}" y2="${ys(p0_)}" stroke="var(--ink)" stroke-width="1.6"/><text class="sm" x="${W-mr}" y="${ys(p0_)-5}" text-anchor="end" style="fill:var(--ink)">average ${p0(p0_)}</text>`;
+  [2,5,10,20,50,100,200].filter(t=>t<=maxN*1.15).forEach(t=>{ g+=`<line x1="${xs(t)}" x2="${xs(t)}" y1="${H-mb}" y2="${H-mb+4}" stroke="var(--ink)"/><text class="sm" x="${xs(t)}" y="${H-mb+16}" text-anchor="middle">${t}</text>`; });
+  g+=`<text class="sm" x="${(ml+W-mr)/2}" y="${H-6}" text-anchor="middle" style="fill:var(--ink2)">assessed incidents in the locality (log scale)</text>`;
+  const more=css('--need1'), less=css('--lo'), mute=css('--mute'); let out=0, hi=0, lo_=0;
+  pts.forEach(a=>{ a.z=(a.k/a.n-p0_)/sd(a.n); a.hash=((a.l*2654435761)>>>0)/4294967296; a.px=xs(a.n*(1+(a.hash-.5)*.1)); a.py=ys(a.k/a.n); a.c=a.z>1.96?more:(a.z<-1.96?less:mute); if(Math.abs(a.z)>1.96) out++; if(a.z>1.96) hi++; if(a.z<-1.96) lo_++; });
+  const hasSel=F.sets.loc.size>0;
+  [...pts].sort((a,b)=>Math.abs(a.z)-Math.abs(b.z)).forEach(a=>{ const on=F.sets.loc.has(a.l); g+=`<circle class="fpt click" data-l="${a.l}" cx="${a.px.toFixed(1)}" cy="${a.py.toFixed(1)}" r="${on?6:Math.abs(a.z)>1.96?4.2:3.2}" fill="${a.c}" fill-opacity="${Math.abs(a.z)>1.96?.9:.55}" stroke="var(--ink)" stroke-width="${on?2.4:.9}" opacity="${hasSel&&!on?.35:1}"/>`; });
+  const lab=[...pts].filter(a=>a.n>=6).sort((a,b)=>Math.abs(b.z)-Math.abs(a.z)).slice(0,6), boxes=[];
+  lab.forEach(a=>{ const t=shortLab(D.locs[a.l].n,22), w=t.length*6+6, right=a.px+w+8<W; const bx=right?a.px+8:a.px-8-w, by=a.py-5; if(boxes.some(o=>bx<o[0]+o[2]&&bx+w>o[0]&&by<o[1]+o[3]&&by+13>o[1])) return; boxes.push([bx,by,w,13]); g+=`<text class="lbl" x="${right?a.px+8:a.px-8}" y="${a.py+3}" text-anchor="${right?'start':'end'}" style="paint-order:stroke;stroke:var(--panel);stroke-width:3.5px;stroke-linejoin:round">${t}</text>`; });
+  host.innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Funnel plot of each locality's share of incidents flagging the need against the number of incidents assessed">${g}</svg>`;
+  host._pts=pts; host._W=W; host._p0=p0_;
+  $('#funRead').innerHTML=`<b>${p0(out/pts.length)}</b> of the ${fmt(pts.length)} localities fall outside the 95% funnel; chance alone would put about 5% there. <b>${hi}</b> sit above it (more flagged than their size explains), <b>${lo_}</b> below it.`;
+}
+$('#fun').addEventListener('mousemove',e=>{
+  const c=e.target.closest('.fpt'), host=$('#fun'); if(!c||!host._pts){ hideTip(); return; }
+  const a=host._pts.find(x=>x.l===+c.dataset.l); if(!a) return;
+  showTip(`<div class="t">${D.locs[a.l].n}</div><div class="m">${D.govs[D.locs[a.l].g]}</div><div class="m"><span class="k">${a.k}</span> of <span class="k">${a.n}</span> assessed incidents flagged (<span class="k">${p0(a.k/a.n)}</span>) against an average of <span class="k">${p0(host._p0)}</span>.</div><div class="m">${Math.abs(a.z)>3.09?'Far outside what chance would give':Math.abs(a.z)>1.96?'Outside the 95% funnel':'Within the funnel: consistent with chance'}</div><div class="m" style="color:var(--mute)">Click to isolate</div>`,e.clientX,e.clientY);
+});
+$('#fun').addEventListener('mouseleave',hideTip);
+$('#fun').addEventListener('click',e=>{ const c=e.target.closest('.fpt'); if(c) toggle('loc',+c.dataset.l); });
+
+/* ---------- in the responders' words ---------- */
+const THEME_LENS={mind:{lab:'Mind',flag:r=>r.nd&1,col:'mind'},wash:{lab:'Body: water & sanitation',flag:r=>(r.nd>>2)&1,col:'body'},land:{lab:'Land: livelihood',flag:r=>(r.nd>>5)&1,col:'land'}};
+function renderWords(){
+  const host=$('#words'); if(!host) return;
+  const rows=sel().filter(r=>r.as), P=pal(); let html='';
+  for(const dom of ['mind','wash','land']){
+    const L=THEME_LENS[dom], base=rows.filter(L.flag), N_=base.length, col=P.lens[L.col];
+    html+=`<div class="tgrp"><div class="thead" style="color:${col}">${L.lab}<small>${fmt(N_)} incidents flagged</small></div>`;
+    D.themes.filter(t=>t.domain===dom).forEach(t=>{
+      const k=base.reduce((a,r)=>a+((r.tm>>t.bit)&1),0), s=N_?k/N_:0;
+      html+=`<div class="trow" title="${k} of ${N_} flagged incidents mention this"><span class="tl">${t.label}</span><span class="dbar"><i style="width:${Math.max(s>0?2:0,s*100/0.6)}%;background:radial-gradient(circle at 4px 50%,${col} 2.7px,transparent 3.2px) 0 0/9px 12px repeat-x"></i></span><span class="tn">${p0(s)}</span></div>`;
+    });
+    html+='</div>';
+  }
+  host.innerHTML=html;
+  // severity ladder
+  const sd=UI.sevDim, Dm=DIMS[sd], base=sel(sd).filter(r=>r.ps3>0), gs=groupsOf(sd,base,8).sort((a,b)=>b.rows.length-a.rows.length).slice(0,10);
+  const lad=$('#ladder'), SEV=['To be assessed or considered','Recommended or needed','Highly recommended'];
+  const cols=[needRamp(.25),needRamp(.6),needRamp(1)];
+  lad.innerHTML=gs.length?gs.map(gp=>{ const c=[0,0,0]; gp.rows.forEach(r=>c[r.ps3-1]++); const n=gp.rows.length;
+    return `<div class="lrow"><button class="ll" data-k="${gp.k}" aria-pressed="${F.sets[sd].has(gp.k)}" title="Filter to ${gp.lab}">${shortLab(gp.lab,26)}<em>${fmt(n)}</em></button><div class="lbar">${c.map((v,i)=>`<i style="flex:${v};background:${cols[i]};color:${onColor(cols[i])}" title="${SEV[i]}: ${v} (${p0(v/n)})">${v/n>=.09?p0(v/n):''}</i>`).join('')}</div></div>`; }).join('')
+    +`<div class="lkey">${SEV.map((s,i)=>`<span><i style="background:${cols[i]}"></i>${s}</span>`).join('')}</div>`:'<div class="empty">Too few incidents with a psychosocial recommendation.</div>';
+}
+$('#ladder').addEventListener('click',e=>{ const b=e.target.closest('.ll'); if(b) toggle(UI.sevDim,+b.dataset.k); });
+
+fillSelect('#ternDim',GROUP_DIMS,UI.ternDim); $('#ternDim').onchange=e=>{UI.ternDim=e.target.value; renderTernary();};
+fillSelect('#sevDim',GROUP_DIMS,UI.sevDim); $('#sevDim').onchange=e=>{UI.sevDim=e.target.value; renderWords();};
+wireSeg('#outSeg','outcome',renderDrivers); wireSeg('#funSeg','funOut',renderFunnel);
+
+/* ---------- log ---------- */
+function renderLog(cur){
+  cur = cur||LOGROWS;
+  const rows=cur.slice().sort((a,b)=>b.ds.localeCompare(a.ds)||b.i-a.i), shown=rows.slice(0,25*UI.page);
+  $('#logcount').textContent=`${fmt(rows.length)} incidents in the current selection, newest first.`;
+  $('#log').innerHTML=`<thead><tr><th>Date</th><th>Governorate</th><th>Locality</th><th>Area</th><th>Type</th><th>Reason</th><th class="n">Structures</th><th class="n">Affected</th><th class="n">Displaced</th><th>Needs flagged</th></tr></thead><tbody>${shown.map(r=>{
+    const pills=[...Array(9).keys()].filter(k=>(r.nd>>k)&1).map(k=>`<span class="pill ${k<2?'hot':''}" title="${NEED_SHORT[k]}">${NEED_CODE[k]}</span>`).join('');
+    return `<tr><td class="d">${r.ds}</td><td>${D.govs[r.g]}</td><td>${D.locs[r.l].n}</td><td>${D.areas[r.a]}</td><td>${D.types[r.t]}</td><td>${D.reasons[r.r]}</td><td class="n">${r.st}</td><td class="n">${fmt(r.ap)}</td><td class="n">${fmt(r.dp)}</td><td>${r.as?(pills||'<span style="color:var(--mute)">none</span>'):'<span style="color:var(--mute)">not recorded</span>'}</td></tr>`; }).join('')}</tbody>`;
+  $('#more').parentElement.style.display = shown.length<rows.length?'flex':'none';
+}
+let LOGROWS=R;
+
+/* ---------- orchestration ---------- */
+let queued=false;
+function update(){ if(queued) return; queued=true; requestAnimationFrame(()=>{ queued=false; run(); }); }
+function run(){
+  buildRamps();
+  const cur=sel(); LOGROWS=cur;
+  renderChips(); renderKpis(cur); renderDemo(cur);
+  buildItems(); locAgg=M.items.map(i=>({l:i.l,name:i.name,g:i.g,s:i.s}));
+  drawMap(); drawLegend(); renderPlaces();
+  const yr=(F.t0<=MIN_YM&&F.t1>=MAX_YM)?'':(Math.floor(F.t0/12)===Math.floor(F.t1/12)?String(Math.floor(F.t0/12)):Math.floor(F.t0/12)+'–'+Math.floor(F.t1/12));
+  $('#yearmark').textContent=yr;
+  paintLineChips(); renderTimeline(); renderTernary(); renderWeb(); renderDrivers(); renderStrata(); renderFunnel(); renderWords(); renderLog(cur);
+}
+let rt; const ro=new ResizeObserver(()=>{ clearTimeout(rt); rt=setTimeout(()=>{ sizeMap(); tlKey=''; run(); },120); });
+['#mapwrap','#tl','#tern','#web','#drv','#strata','#fun','#words'].forEach(s=>ro.observe($(s)));
+new MutationObserver(()=>{tlKey=''; update();}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+matchMedia('(prefers-color-scheme: light)').addEventListener('change',()=>{tlKey=''; update();});
+function setMeta(){
+  const meta=D.meta||{}, yA=Math.floor(MIN_YM/12), yB=Math.floor(MAX_YM/12);
+  const eb=document.getElementById('eyebrow'); if(eb) eb.textContent='West Bank and East Jerusalem · incident records '+yA+'–'+yB;
+  const sl=document.getElementById('srcline'); if(sl){ const last=R.reduce((m,r)=>r.ds>m?r.ds:m,''); sl.textContent=fmt(N)+' incident records, latest incident '+last+(meta.updated?', data refreshed '+meta.updated.slice(0,10):'')+'.'; }
+}
+setMeta(); sizeMap(); run();
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>{ sizeMap(); tlKey=''; run(); });
+}
+(function(){
+  var box=document.getElementById('loading');
+  function picker(){ return ' <label class="btn" style="cursor:pointer">Choose incidents.csv<input type="file" accept=".csv,text/csv" id="csvpick" style="display:none"></label>'; }
+  function fail(msg){
+    if(!box) return; box.className='loading err';
+    box.innerHTML='<b>The data could not be loaded.</b> '+msg+' <button class="btn" onclick="location.reload()">Try again</button>'+picker();
+    var p=document.getElementById('csvpick'); if(p) p.onchange=function(){ var f=p.files[0]; if(f) f.text().then(function(t){ start(t,f.lastModified?new Date(f.lastModified).toISOString():''); }).catch(function(e){ fail(String(e&&e.message||e)); }); };
+  }
+  function start(text,updated){
+    var D; try{ D=loadCsvText(text,{updated:updated}); }catch(e){ fail(String((e&&e.message)||e)); return; }
+    if(box) box.remove();
+    boot(D); D.fitting=true; D.fitPct=0;
+    ATLAS.computeStats(D,function(f){ D.fitPct=f; if(window.__statsStep) window.__statsStep(); })
+      .then(function(S){ D.stats=S; D.fitting=false; window.__statsReady&&window.__statsReady(); })
+      .catch(function(e){ D.statsError=String((e&&e.message)||e); window.__statsReady&&window.__statsReady(); });
+  }
+  fetch('incidents.csv',{cache:'no-cache'})
+    .then(function(r){ if(!r.ok) throw new Error('incidents.csv returned '+r.status+'. Is it in the same folder as index.html?'); var lm=r.headers.get('Last-Modified'); return r.text().then(function(t){ return [t,lm?new Date(lm).toISOString():'']; }); })
+    .then(function(a){ start(a[0],a[1]); })
+    .catch(function(e){ fail(String((e&&e.message)||e)+' If you opened the page straight from a folder, pick the file instead.'); });
+})();
+</script>
+</body>
+</html>
